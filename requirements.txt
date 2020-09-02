@@ -1,0 +1,9 @@
+torch
+torchvision
+scipy
+vtk
+pytest
+tabulate
+pandas
+sklearn
+matplotlib

@@ -1,0 +1,2 @@
+python3 Localised1DCAE.py -d /Users/maxime/IndividualProject/data/subdomain_8/ /Users/maxime/IndividualProject/data/subdomain_6/ -pick /Users/maxime/IndividualProject/code/Data_Assimilation/src/UnstructuredCAEDA/ -r 0 -t test2_gen1D -perc 1 -x 1 -e /experiments/bigData1D/ -m 0 -n 1D2L -o 0.000000005
+
