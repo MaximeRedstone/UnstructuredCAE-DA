@@ -1,0 +1,1754 @@
+Path ['/home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE', '/usr/lib/python36.zip', '/usr/lib/python3.6', '/usr/lib/python3.6/lib-dynload', '/home/mredstone/.local/lib/python3.6/site-packages', '/usr/local/lib/python3.6/dist-packages', '/usr/lib/python3/dist-packages', '/home/mredstone/unstructuredCAE/code/Data_Assimilation/src/', '/Users/maxime/IndividualProject/code/Data_Assimilation/src/']
+
+------------------------- Simulation Started at 2020-08-22 14:57:24.212973 ------------------- 
+
+data fp  /home/mredstone/unstructuredCAE/data/subdomain_8/
+Mean historical data is: 1
+domain, other, pickle, dim 8 ['6'] /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/ 1
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/X_80_1D_clustered.pickle
+Shape read X:  (537, 16206)
+Clustering in 1D
+| Header             | Info                                                                         |
+|--------------------+------------------------------------------------------------------------------|
+| Experiment title   | MeanHist_80P_150E_1D2L                                                       |
+| Home dir           | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/         |
+| Results dir        | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/results/ |
+| Data fp            | /home/mredstone/unstructuredCAE/data/subdomain_8/                            |
+| Pickled data fp    | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/     |
+| Field name         | TracerGeorge                                                                 |
+| Using Loader       | <class 'VarDACAE.UnstructuredMesh.DataLoaderUnstructuredMesh.DataLoaderUnstructuredMesh'>     |
+| Compression Method | AE                                                                           |
+| Percentage         | 80                                                                           |
+| Seed               | 42                                                                           |
+| 3D                 | False                                                                        |
+| 2D                 | False                                                                        |
+| 1D                 | True                                                                         |
+Settings obj has MEAN hist data of: 1
+Initialising model of type  <class 'VarDACAE.AEs.AE_general.GenCAE'>
+Dim set in GenCAE:  1
+block is  Tucodec1D  and layer_kwargs is  {'B': 'NeXt1D', 'Cstd': 64, 'S': None, 'A': 'prelu', 'AS': None, 'DIM': 1, 'clusterInputSize': 16206, 'encode': True}
+When creating TucodecEncode1D in build, inputSize =  16206
+DIM USED  1
+When creating TucodecEncode1D, inputSize =  16206 with Cstd =  64
+Dim set in GenCAE:  1
+block is  Tucodec1D  and layer_kwargs is  {'B': 'NeXt1D', 'Cstd': 64, 'S': None, 'A': 'prelu', 'AS': None, 'DIM': 1, 'clusterInputSize': 16206, 'encode': False}
+When creating TucodecEncode1D in build, inputSize =  16206
+DIM USED  1
+------------------------------ Training subdomain 8 at 2020-08-22 14:57:29.580844. ------------------------------
+Loading data started 2020-08-22 14:57:29.580958
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/X_80_1D_clustered.pickle
+Shape read X:  (537, 16206)
+Clustering in 1D
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+test_X type:  <class 'numpy.ndarray'>
+test X shape 0 =  8  and batch  3
+Train loader data <torch.utils.data.dataloader.DataLoader object at 0x7f59856b7fd0>
+Loading data finished 2020-08-22 14:57:37.805216
+Loop AE Train begins at  14:57:37.808732
+Training epoch begins:  0
+epoch [1/150], TRAIN: -loss:20295.68, av_diff: 0.94, time taken (m): 0.01m
+epoch [1/150], TEST: -loss:20199.9536, time taken(m): 0.00m
+Training epoch ends:  0
+Training epoch begins:  1
+Training epoch ends:  1
+Training epoch begins:  2
+Training epoch ends:  2
+Training epoch begins:  3
+Training epoch ends:  3
+Training epoch begins:  4
+Training epoch ends:  4
+Training epoch begins:  5
+epoch [6/150], TRAIN: -loss:4317.19, av_diff: 0.03, time taken (m): 0.01m
+Training epoch ends:  5
+Training epoch begins:  6
+Training epoch ends:  6
+Training epoch begins:  7
+Training epoch ends:  7
+Training epoch begins:  8
+Training epoch ends:  8
+Training epoch begins:  9
+Training epoch ends:  9
+Training epoch begins:  10
+epoch [11/150], TRAIN: -loss:513.98, av_diff: 0.05, time taken (m): 0.01m
+epoch [11/150], TEST: -loss:3518.7054, time taken(m): 0.00m
+Training epoch ends:  10
+Training epoch begins:  11
+Training epoch ends:  11
+Training epoch begins:  12
+Training epoch ends:  12
+Training epoch begins:  13
+Training epoch ends:  13
+Training epoch begins:  14
+Training epoch ends:  14
+Training epoch begins:  15
+epoch [16/150], TRAIN: -loss:105.30, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  15
+Training epoch begins:  16
+Training epoch ends:  16
+Training epoch begins:  17
+Training epoch ends:  17
+Training epoch begins:  18
+Training epoch ends:  18
+Training epoch begins:  19
+Training epoch ends:  19
+Training epoch begins:  20
+epoch [21/150], TRAIN: -loss:46.64, av_diff: 0.00, time taken (m): 0.01m
+epoch [21/150], TEST: -loss:366.2072, time taken(m): 0.00m
+Training epoch ends:  20
+Training epoch begins:  21
+Training epoch ends:  21
+Training epoch begins:  22
+Training epoch ends:  22
+Training epoch begins:  23
+Training epoch ends:  23
+Training epoch begins:  24
+Training epoch ends:  24
+Training epoch begins:  25
+epoch [26/150], TRAIN: -loss:32.96, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  25
+Training epoch begins:  26
+Training epoch ends:  26
+Training epoch begins:  27
+Training epoch ends:  27
+Training epoch begins:  28
+Training epoch ends:  28
+Training epoch begins:  29
+Training epoch ends:  29
+Training epoch begins:  30
+epoch [31/150], TRAIN: -loss:31.12, av_diff: 0.00, time taken (m): 0.01m
+epoch [31/150], TEST: -loss:247.8314, time taken(m): 0.00m
+Training epoch ends:  30
+Training epoch begins:  31
+Training epoch ends:  31
+Training epoch begins:  32
+Training epoch ends:  32
+Training epoch begins:  33
+Training epoch ends:  33
+Training epoch begins:  34
+Training epoch ends:  34
+Training epoch begins:  35
+epoch [36/150], TRAIN: -loss:30.90, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  35
+Training epoch begins:  36
+Training epoch ends:  36
+Training epoch begins:  37
+Training epoch ends:  37
+Training epoch begins:  38
+Training epoch ends:  38
+Training epoch begins:  39
+Training epoch ends:  39
+Training epoch begins:  40
+epoch [41/150], TRAIN: -loss:30.18, av_diff: 0.00, time taken (m): 0.01m
+epoch [41/150], TEST: -loss:239.6754, time taken(m): 0.00m
+Training epoch ends:  40
+Training epoch begins:  41
+Training epoch ends:  41
+Training epoch begins:  42
+Training epoch ends:  42
+Training epoch begins:  43
+Training epoch ends:  43
+Training epoch begins:  44
+Training epoch ends:  44
+Training epoch begins:  45
+epoch [46/150], TRAIN: -loss:29.21, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  45
+Training epoch begins:  46
+Training epoch ends:  46
+Training epoch begins:  47
+Training epoch ends:  47
+Training epoch begins:  48
+Training epoch ends:  48
+Training epoch begins:  49
+Training epoch ends:  49
+Training epoch begins:  50
+epoch [51/150], TRAIN: -loss:29.57, av_diff: 0.00, time taken (m): 0.01m
+epoch [51/150], TEST: -loss:232.2407, time taken(m): 0.00m
+Training epoch ends:  50
+Training epoch begins:  51
+Training epoch ends:  51
+Training epoch begins:  52
+Training epoch ends:  52
+Training epoch begins:  53
+Training epoch ends:  53
+Training epoch begins:  54
+Training epoch ends:  54
+Training epoch begins:  55
+epoch [56/150], TRAIN: -loss:29.31, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  55
+Training epoch begins:  56
+Training epoch ends:  56
+Training epoch begins:  57
+Training epoch ends:  57
+Training epoch begins:  58
+Training epoch ends:  58
+Training epoch begins:  59
+Training epoch ends:  59
+Training epoch begins:  60
+epoch [61/150], TRAIN: -loss:30.46, av_diff: 0.00, time taken (m): 0.01m
+epoch [61/150], TEST: -loss:243.4263, time taken(m): 0.00m
+Training epoch ends:  60
+Training epoch begins:  61
+Training epoch ends:  61
+Training epoch begins:  62
+Training epoch ends:  62
+Training epoch begins:  63
+Training epoch ends:  63
+Training epoch begins:  64
+Training epoch ends:  64
+Training epoch begins:  65
+epoch [66/150], TRAIN: -loss:30.11, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  65
+Training epoch begins:  66
+Training epoch ends:  66
+Training epoch begins:  67
+Training epoch ends:  67
+Training epoch begins:  68
+Training epoch ends:  68
+Training epoch begins:  69
+Training epoch ends:  69
+Training epoch begins:  70
+epoch [71/150], TRAIN: -loss:30.27, av_diff: 0.01, time taken (m): 0.01m
+epoch [71/150], TEST: -loss:247.1507, time taken(m): 0.00m
+Training epoch ends:  70
+Training epoch begins:  71
+Training epoch ends:  71
+Training epoch begins:  72
+Training epoch ends:  72
+Training epoch begins:  73
+Training epoch ends:  73
+Training epoch begins:  74
+Training epoch ends:  74
+Training epoch begins:  75
+epoch [76/150], TRAIN: -loss:31.54, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  75
+Training epoch begins:  76
+Training epoch ends:  76
+Training epoch begins:  77
+Training epoch ends:  77
+Training epoch begins:  78
+Training epoch ends:  78
+Training epoch begins:  79
+Training epoch ends:  79
+Training epoch begins:  80
+epoch [81/150], TRAIN: -loss:31.09, av_diff: 0.01, time taken (m): 0.01m
+epoch [81/150], TEST: -loss:243.2252, time taken(m): 0.00m
+Training epoch ends:  80
+Training epoch begins:  81
+Training epoch ends:  81
+Training epoch begins:  82
+Training epoch ends:  82
+Training epoch begins:  83
+Training epoch ends:  83
+Training epoch begins:  84
+Training epoch ends:  84
+Training epoch begins:  85
+epoch [86/150], TRAIN: -loss:29.60, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  85
+Training epoch begins:  86
+Training epoch ends:  86
+Training epoch begins:  87
+Training epoch ends:  87
+Training epoch begins:  88
+Training epoch ends:  88
+Training epoch begins:  89
+Training epoch ends:  89
+Training epoch begins:  90
+epoch [91/150], TRAIN: -loss:32.20, av_diff: 0.01, time taken (m): 0.01m
+epoch [91/150], TEST: -loss:245.0231, time taken(m): 0.00m
+Training epoch ends:  90
+Training epoch begins:  91
+Training epoch ends:  91
+Training epoch begins:  92
+Training epoch ends:  92
+Training epoch begins:  93
+Training epoch ends:  93
+Training epoch begins:  94
+Training epoch ends:  94
+Training epoch begins:  95
+epoch [96/150], TRAIN: -loss:29.81, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  95
+Training epoch begins:  96
+Training epoch ends:  96
+Training epoch begins:  97
+Training epoch ends:  97
+Training epoch begins:  98
+Training epoch ends:  98
+Training epoch begins:  99
+Training epoch ends:  99
+Training epoch begins:  100
+epoch [101/150], TRAIN: -loss:30.50, av_diff: 0.01, time taken (m): 0.01m
+epoch [101/150], TEST: -loss:243.2620, time taken(m): 0.00m
+Training epoch ends:  100
+Training epoch begins:  101
+Training epoch ends:  101
+Training epoch begins:  102
+Training epoch ends:  102
+Training epoch begins:  103
+Training epoch ends:  103
+Training epoch begins:  104
+Training epoch ends:  104
+Training epoch begins:  105
+epoch [106/150], TRAIN: -loss:32.15, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  105
+Training epoch begins:  106
+Training epoch ends:  106
+Training epoch begins:  107
+Training epoch ends:  107
+Training epoch begins:  108
+Training epoch ends:  108
+Training epoch begins:  109
+Training epoch ends:  109
+Training epoch begins:  110
+epoch [111/150], TRAIN: -loss:29.00, av_diff: 0.00, time taken (m): 0.01m
+epoch [111/150], TEST: -loss:240.2767, time taken(m): 0.00m
+Training epoch ends:  110
+Training epoch begins:  111
+Training epoch ends:  111
+Training epoch begins:  112
+Training epoch ends:  112
+Training epoch begins:  113
+Training epoch ends:  113
+Training epoch begins:  114
+Training epoch ends:  114
+Training epoch begins:  115
+epoch [116/150], TRAIN: -loss:29.69, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  115
+Training epoch begins:  116
+Training epoch ends:  116
+Training epoch begins:  117
+Training epoch ends:  117
+Training epoch begins:  118
+Training epoch ends:  118
+Training epoch begins:  119
+Training epoch ends:  119
+Training epoch begins:  120
+epoch [121/150], TRAIN: -loss:29.49, av_diff: 0.01, time taken (m): 0.01m
+epoch [121/150], TEST: -loss:244.2180, time taken(m): 0.00m
+Training epoch ends:  120
+Training epoch begins:  121
+Training epoch ends:  121
+Training epoch begins:  122
+Training epoch ends:  122
+Training epoch begins:  123
+Training epoch ends:  123
+Training epoch begins:  124
+Training epoch ends:  124
+Training epoch begins:  125
+epoch [126/150], TRAIN: -loss:31.91, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  125
+Training epoch begins:  126
+Training epoch ends:  126
+Training epoch begins:  127
+Training epoch ends:  127
+Training epoch begins:  128
+Training epoch ends:  128
+Training epoch begins:  129
+Training epoch ends:  129
+Training epoch begins:  130
+epoch [131/150], TRAIN: -loss:30.83, av_diff: 0.01, time taken (m): 0.01m
+epoch [131/150], TEST: -loss:255.7148, time taken(m): 0.00m
+Training epoch ends:  130
+Training epoch begins:  131
+Training epoch ends:  131
+Training epoch begins:  132
+Training epoch ends:  132
+Training epoch begins:  133
+Training epoch ends:  133
+Training epoch begins:  134
+Training epoch ends:  134
+Training epoch begins:  135
+epoch [136/150], TRAIN: -loss:30.70, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  135
+Training epoch begins:  136
+Training epoch ends:  136
+Training epoch begins:  137
+Training epoch ends:  137
+Training epoch begins:  138
+Training epoch ends:  138
+Training epoch begins:  139
+Training epoch ends:  139
+Training epoch begins:  140
+epoch [141/150], TRAIN: -loss:31.79, av_diff: 0.01, time taken (m): 0.01m
+epoch [141/150], TEST: -loss:242.2833, time taken(m): 0.00m
+Training epoch ends:  140
+Training epoch begins:  141
+Training epoch ends:  141
+Training epoch begins:  142
+Training epoch ends:  142
+Training epoch begins:  143
+Training epoch ends:  143
+Training epoch begins:  144
+Training epoch ends:  144
+Training epoch begins:  145
+epoch [146/150], TRAIN: -loss:29.90, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  145
+Training epoch begins:  146
+Training epoch ends:  146
+Training epoch begins:  147
+Training epoch ends:  147
+Training epoch begins:  148
+Training epoch ends:  148
+Training epoch begins:  149
+epoch [150/150], TRAIN: -loss:30.82, av_diff: 0.01, time taken (m): 0.01m
+epoch [150/150], TEST: -loss:211.4329, time taken(m): 0.00m
+Training epoch ends:  149
+Loop AE Train Ends at  14:59:36.702707
+------------------------------ DA subdomain 8 at 2020-08-22 14:59:36.760472. ------------------------------
+----------------------------- START OF DA ----------------------
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/X_80_1D_clustered.pickle
+Shape read X:  (537, 16206)
+Clustering in 1D
+----------------------------- DA Loading Data and Splitting ----------------------
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+Following loading data for BatchDA 
+ train_X = (429, 16206) , test_X = (107, 16206), X = (537, 16206)
+-----------------------------DA Init----------------------
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/X_80_1D_clustered.pickle
+Shape read X:  (537, 16206)
+Clustering in 1D
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+Choosing between background states 1
+Selecting mean historical data
+Taking mean hist data as background d = z_c - O
+----------------------------- DA Testing for each test case ----------------------
+Taking mean hist data as background d = z_c - O
+min = 0.1297 s, decode = 0.1380 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2679 s, inc stats = 19.4079, 
+v_trunc (Latent to Reduced) = 0.0022, dec (Reduced to Full) = 0.1357, add (DA)= 0.0001
+time_online 0.2679s
+Taking mean hist data as background d = z_c - O
+min = 0.0708 s, decode = 0.1234 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1943 s, inc stats = 0.2083, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1223, add (DA)= 0.0001
+time_online 0.1943s
+Taking mean hist data as background d = z_c - O
+min = 0.0737 s, decode = 0.1327 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2065 s, inc stats = 0.2244, 
+v_trunc (Latent to Reduced) = 0.0009, dec (Reduced to Full) = 0.1317, add (DA)= 0.0001
+time_online 0.2065s
+Taking mean hist data as background d = z_c - O
+min = 0.0716 s, decode = 0.1233 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1950 s, inc stats = 0.2071, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1222, add (DA)= 0.0001
+time_online 0.1950s
+Taking mean hist data as background d = z_c - O
+min = 0.0774 s, decode = 0.1352 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2126 s, inc stats = 0.2262, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1341, add (DA)= 0.0001
+time_online 0.2126s
+Taking mean hist data as background d = z_c - O
+min = 0.0700 s, decode = 0.1351 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2052 s, inc stats = 0.2188, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1340, add (DA)= 0.0001
+time_online 0.2052s
+Taking mean hist data as background d = z_c - O
+min = 0.0854 s, decode = 0.1356 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2211 s, inc stats = 0.2348, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1345, add (DA)= 0.0001
+time_online 0.2211s
+Taking mean hist data as background d = z_c - O
+min = 0.0701 s, decode = 0.1372 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2074 s, inc stats = 0.2192, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1361, add (DA)= 0.0001
+time_online 0.2074s
+Taking mean hist data as background d = z_c - O
+min = 0.0690 s, decode = 0.1298 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1989 s, inc stats = 0.2065, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1287, add (DA)= 0.0001
+time_online 0.1989s
+Taking mean hist data as background d = z_c - O
+min = 0.0943 s, decode = 0.1364 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2308 s, inc stats = 0.2444, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1353, add (DA)= 0.0001
+time_online 0.2308s
+Taking mean hist data as background d = z_c - O
+min = 0.0782 s, decode = 0.1311 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2095 s, inc stats = 0.2233, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1300, add (DA)= 0.0001
+time_online 0.2095s
+DA - - L2: 243.75, L1: 844.72, % Improve: 60.86%, DA_MAE: 0.01, mse_ref: 0.04, mse_DA: 0.015, time(s): 2.0598s,
+\% improve_point: 58.46, mse_ref_points: 2.2559370428275446e-06, mse_da_points: 9.479121095711078e-07, % improve_overlap: 91.77, mse_ref_overlap: 0.21247, mse_da_overlap: 0.01748
+Taking mean hist data as background d = z_c - O
+min = 0.0727 s, decode = 0.1369 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2097 s, inc stats = 0.2373, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1358, add (DA)= 0.0001
+time_online 0.2097s
+Taking mean hist data as background d = z_c - O
+min = 0.0715 s, decode = 0.1353 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2070 s, inc stats = 0.2190, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1341, add (DA)= 0.0001
+time_online 0.2070s
+Taking mean hist data as background d = z_c - O
+min = 0.0706 s, decode = 0.1248 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1955 s, inc stats = 0.2093, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1237, add (DA)= 0.0001
+time_online 0.1955s
+Taking mean hist data as background d = z_c - O
+min = 0.1380 s, decode = 0.1347 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2728 s, inc stats = 0.2867, 
+v_trunc (Latent to Reduced) = 0.0020, dec (Reduced to Full) = 0.1326, add (DA)= 0.0001
+time_online 0.2728s
+Taking mean hist data as background d = z_c - O
+min = 0.0738 s, decode = 0.1236 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1975 s, inc stats = 0.2096, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1224, add (DA)= 0.0001
+time_online 0.1975s
+Taking mean hist data as background d = z_c - O
+min = 0.0686 s, decode = 0.1251 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1938 s, inc stats = 0.2063, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1240, add (DA)= 0.0001
+time_online 0.1938s
+Taking mean hist data as background d = z_c - O
+min = 0.0790 s, decode = 0.1328 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2119 s, inc stats = 0.2255, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1316, add (DA)= 0.0001
+time_online 0.2119s
+Taking mean hist data as background d = z_c - O
+min = 0.0701 s, decode = 0.1233 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1935 s, inc stats = 0.2057, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1222, add (DA)= 0.0001
+time_online 0.1935s
+Taking mean hist data as background d = z_c - O
+min = 0.0795 s, decode = 0.1235 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2030 s, inc stats = 0.2171, 
+v_trunc (Latent to Reduced) = 0.0011, dec (Reduced to Full) = 0.1223, add (DA)= 0.0001
+time_online 0.2030s
+Taking mean hist data as background d = z_c - O
+min = 0.0738 s, decode = 0.1340 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2079 s, inc stats = 19.3441, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1329, add (DA)= 0.0001
+time_online 0.2079s
+DA - - L2: 405.45, L1: 1123.25, % Improve: 34.99%, DA_MAE: 0.01, mse_ref: 0.03, mse_DA: 0.020, time(s): 2.0972s,
+\% improve_point: 26.39, mse_ref_points: 1.8754003806679073e-06, mse_da_points: 1.2433248662243854e-06, % improve_overlap: 88.72, mse_ref_overlap: 0.20783, mse_da_overlap: 0.02324
+Taking mean hist data as background d = z_c - O
+min = 0.0687 s, decode = 0.1328 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2017 s, inc stats = 0.2155, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1316, add (DA)= 0.0001
+time_online 0.2017s
+Taking mean hist data as background d = z_c - O
+min = 0.1489 s, decode = 0.1338 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2827 s, inc stats = 0.2967, 
+v_trunc (Latent to Reduced) = 0.0022, dec (Reduced to Full) = 0.1315, add (DA)= 0.0001
+time_online 0.2827s
+Taking mean hist data as background d = z_c - O
+min = 0.0865 s, decode = 0.1333 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2199 s, inc stats = 0.2337, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1322, add (DA)= 0.0001
+time_online 0.2199s
+Taking mean hist data as background d = z_c - O
+min = 0.0684 s, decode = 0.1318 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2002 s, inc stats = 0.2138, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1307, add (DA)= 0.0001
+time_online 0.2002s
+Taking mean hist data as background d = z_c - O
+min = 0.0711 s, decode = 0.1364 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2076 s, inc stats = 0.2135, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1353, add (DA)= 0.0001
+time_online 0.2076s
+Taking mean hist data as background d = z_c - O
+min = 0.0686 s, decode = 0.1202 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1889 s, inc stats = 0.1962, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1191, add (DA)= 0.0001
+time_online 0.1889s
+Taking mean hist data as background d = z_c - O
+min = 0.0701 s, decode = 0.1318 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2020 s, inc stats = 0.2092, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1307, add (DA)= 0.0001
+time_online 0.2020s
+Taking mean hist data as background d = z_c - O
+min = 0.0716 s, decode = 0.1221 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1939 s, inc stats = 0.2076, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1209, add (DA)= 0.0001
+time_online 0.1939s
+Taking mean hist data as background d = z_c - O
+min = 0.0765 s, decode = 0.1200 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1966 s, inc stats = 0.2058, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1189, add (DA)= 0.0001
+time_online 0.1966s
+Taking mean hist data as background d = z_c - O
+min = 0.0678 s, decode = 0.1316 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1994 s, inc stats = 0.2097, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1305, add (DA)= 0.0001
+time_online 0.1994s
+DA - - L2: 533.27, L1: 1298.75, % Improve: 36.70%, DA_MAE: 0.01, mse_ref: 0.03, mse_DA: 0.019, time(s): 1.4925s,
+\% improve_point: 25.14, mse_ref_points: 1.7201198188311993e-06, mse_da_points: 1.178320905529705e-06, % improve_overlap: 86.41, mse_ref_overlap: 0.20586, mse_da_overlap: 0.02774
+Taking mean hist data as background d = z_c - O
+min = 0.0814 s, decode = 0.1233 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2048 s, inc stats = 0.2140, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1222, add (DA)= 0.0001
+time_online 0.2048s
+Taking mean hist data as background d = z_c - O
+min = 0.0722 s, decode = 0.1211 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1934 s, inc stats = 0.2070, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1200, add (DA)= 0.0001
+time_online 0.1934s
+Taking mean hist data as background d = z_c - O
+min = 0.0763 s, decode = 0.1354 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2118 s, inc stats = 0.2239, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1343, add (DA)= 0.0001
+time_online 0.2118s
+Taking mean hist data as background d = z_c - O
+min = 0.0710 s, decode = 0.1354 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2065 s, inc stats = 0.2200, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1343, add (DA)= 0.0001
+time_online 0.2065s
+Taking mean hist data as background d = z_c - O
+min = 0.0841 s, decode = 0.1220 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2063 s, inc stats = 0.2119, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1209, add (DA)= 0.0001
+time_online 0.2063s
+Taking mean hist data as background d = z_c - O
+min = 0.0715 s, decode = 0.1210 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1926 s, inc stats = 0.2062, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1199, add (DA)= 0.0001
+time_online 0.1926s
+Taking mean hist data as background d = z_c - O
+min = 0.0713 s, decode = 0.1203 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1916 s, inc stats = 0.1976, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1192, add (DA)= 0.0001
+time_online 0.1916s
+Taking mean hist data as background d = z_c - O
+min = 0.0708 s, decode = 0.1146 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1855 s, inc stats = 0.1939, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1135, add (DA)= 0.0001
+time_online 0.1855s
+Taking mean hist data as background d = z_c - O
+min = 0.0690 s, decode = 0.1332 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2022 s, inc stats = 0.2158, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1321, add (DA)= 0.0001
+time_online 0.2022s
+Taking mean hist data as background d = z_c - O
+min = 0.0690 s, decode = 0.1202 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1892 s, inc stats = 19.3037, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1191, add (DA)= 0.0001
+time_online 0.1892s
+DA - - L2: 722.69, L1: 1502.22, % Improve: 38.45%, DA_MAE: 0.01, mse_ref: 0.03, mse_DA: 0.022, time(s): 1.6459s,
+\% improve_point: 28.90, mse_ref_points: 2.0093060615593753e-06, mse_da_points: 1.3372560436537625e-06, % improve_overlap: 85.22, mse_ref_overlap: 0.20679, mse_da_overlap: 0.03045
+Taking mean hist data as background d = z_c - O
+min = 0.0794 s, decode = 0.1391 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2186 s, inc stats = 0.2306, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1379, add (DA)= 0.0002
+time_online 0.2186s
+Taking mean hist data as background d = z_c - O
+min = 0.0797 s, decode = 0.1151 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1949 s, inc stats = 0.2019, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1140, add (DA)= 0.0001
+time_online 0.1949s
+Taking mean hist data as background d = z_c - O
+min = 0.0638 s, decode = 0.1266 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1906 s, inc stats = 0.1971, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1255, add (DA)= 0.0001
+time_online 0.1906s
+Taking mean hist data as background d = z_c - O
+min = 0.0614 s, decode = 0.1239 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1855 s, inc stats = 0.1895, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1229, add (DA)= 0.0001
+time_online 0.1855s
+Taking mean hist data as background d = z_c - O
+min = 0.0718 s, decode = 0.1212 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1931 s, inc stats = 0.2000, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1201, add (DA)= 0.0001
+time_online 0.1931s
+Taking mean hist data as background d = z_c - O
+min = 0.0992 s, decode = 0.1223 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2215 s, inc stats = 0.2353, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1212, add (DA)= 0.0001
+time_online 0.2215s
+Taking mean hist data as background d = z_c - O
+min = 0.0615 s, decode = 0.1207 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1823 s, inc stats = 0.2059, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1196, add (DA)= 0.0001
+time_online 0.1823s
+Taking mean hist data as background d = z_c - O
+min = 0.0637 s, decode = 0.1207 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1845 s, inc stats = 0.1936, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1195, add (DA)= 0.0001
+time_online 0.1845s
+Taking mean hist data as background d = z_c - O
+min = 0.0672 s, decode = 0.1314 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1987 s, inc stats = 0.2125, 
+v_trunc (Latent to Reduced) = 0.0009, dec (Reduced to Full) = 0.1304, add (DA)= 0.0001
+time_online 0.1987s
+Taking mean hist data as background d = z_c - O
+min = 0.0647 s, decode = 0.1375 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2022 s, inc stats = 0.2113, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1364, add (DA)= 0.0001
+time_online 0.2022s
+DA - - L2: 1192.65, L1: 1811.77, % Improve: 34.63%, DA_MAE: 0.01, mse_ref: 0.05, mse_DA: 0.039, time(s): 1.3644s,
+\% improve_point: 26.46, mse_ref_points: 3.221484364129604e-06, mse_da_points: 2.4187685930462564e-06, % improve_overlap: 79.92, mse_ref_overlap: 0.21685, mse_da_overlap: 0.04585
+Taking mean hist data as background d = z_c - O
+min = 0.0615 s, decode = 0.1212 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1827 s, inc stats = 0.2058, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1201, add (DA)= 0.0001
+time_online 0.1827s
+Taking mean hist data as background d = z_c - O
+min = 0.0636 s, decode = 0.1219 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1856 s, inc stats = 0.1912, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1208, add (DA)= 0.0001
+time_online 0.1856s
+Taking mean hist data as background d = z_c - O
+min = 0.1273 s, decode = 0.1367 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2641 s, inc stats = 0.2779, 
+v_trunc (Latent to Reduced) = 0.0021, dec (Reduced to Full) = 0.1345, add (DA)= 0.0001
+time_online 0.2641s
+Taking mean hist data as background d = z_c - O
+min = 0.0634 s, decode = 0.1213 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1848 s, inc stats = 0.2122, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1203, add (DA)= 0.0001
+time_online 0.1848s
+Taking mean hist data as background d = z_c - O
+min = 0.0728 s, decode = 0.1204 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1932 s, inc stats = 0.2070, 
+v_trunc (Latent to Reduced) = 0.0011, dec (Reduced to Full) = 0.1193, add (DA)= 0.0001
+time_online 0.1932s
+Taking mean hist data as background d = z_c - O
+min = 0.0619 s, decode = 0.1215 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1836 s, inc stats = 0.1973, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1205, add (DA)= 0.0001
+time_online 0.1836s
+Taking mean hist data as background d = z_c - O
+min = 0.0728 s, decode = 0.1266 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1995 s, inc stats = 0.2134, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1255, add (DA)= 0.0001
+time_online 0.1995s
+Taking mean hist data as background d = z_c - O
+min = 0.0636 s, decode = 0.1200 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1837 s, inc stats = 0.1974, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1189, add (DA)= 0.0001
+time_online 0.1837s
+Taking mean hist data as background d = z_c - O
+min = 0.0683 s, decode = 0.1213 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1896 s, inc stats = 0.1953, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1202, add (DA)= 0.0001
+time_online 0.1896s
+Taking mean hist data as background d = z_c - O
+min = 0.0797 s, decode = 0.1201 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1999 s, inc stats = 19.4101, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1190, add (DA)= 0.0001
+time_online 0.1999s
+DA - - L2: 1613.02, L1: 2100.35, % Improve: 31.95%, DA_MAE: 0.02, mse_ref: 0.06, mse_DA: 0.050, time(s): 1.4904s,
+\% improve_point: 24.72, mse_ref_points: 3.9865537709573335e-06, mse_da_points: 3.1104453561784958e-06, % improve_overlap: 75.69, mse_ref_overlap: 0.22656, mse_da_overlap: 0.05911
+Taking mean hist data as background d = z_c - O
+min = 0.0627 s, decode = 0.1214 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1842 s, inc stats = 0.1914, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1202, add (DA)= 0.0001
+time_online 0.1842s
+Taking mean hist data as background d = z_c - O
+min = 0.0618 s, decode = 0.1200 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1819 s, inc stats = 0.1942, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1190, add (DA)= 0.0001
+time_online 0.1819s
+Taking mean hist data as background d = z_c - O
+min = 0.0677 s, decode = 0.1228 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1906 s, inc stats = 0.2042, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1216, add (DA)= 0.0001
+time_online 0.1906s
+Taking mean hist data as background d = z_c - O
+min = 0.0671 s, decode = 0.1171 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1844 s, inc stats = 0.1916, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1159, add (DA)= 0.0001
+time_online 0.1844s
+Taking mean hist data as background d = z_c - O
+min = 0.0719 s, decode = 0.1343 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2062 s, inc stats = 0.2181, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1331, add (DA)= 0.0001
+time_online 0.2062s
+Taking mean hist data as background d = z_c - O
+min = 0.0614 s, decode = 0.1242 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1857 s, inc stats = 0.1993, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1231, add (DA)= 0.0001
+time_online 0.1857s
+Taking mean hist data as background d = z_c - O
+min = 0.0611 s, decode = 0.1344 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1955 s, inc stats = 0.2068, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1333, add (DA)= 0.0001
+time_online 0.1955s
+Taking mean hist data as background d = z_c - O
+min = 0.0631 s, decode = 0.1203 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1835 s, inc stats = 0.1909, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1192, add (DA)= 0.0001
+time_online 0.1835s
+Taking mean hist data as background d = z_c - O
+min = 0.0642 s, decode = 0.1246 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1888 s, inc stats = 0.2024, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1235, add (DA)= 0.0001
+time_online 0.1888s
+Taking mean hist data as background d = z_c - O
+min = 0.0643 s, decode = 0.1209 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1853 s, inc stats = 0.1988, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1198, add (DA)= 0.0001
+time_online 0.1853s
+DA - - L2: 1972.42, L1: 2324.58, % Improve: 29.80%, DA_MAE: 0.02, mse_ref: 0.07, mse_DA: 0.059, time(s): 1.3089s,
+\% improve_point: 23.19, mse_ref_points: 4.534062502031193e-06, mse_da_points: 3.6277022391457377e-06, % improve_overlap: 73.01, mse_ref_overlap: 0.23395, mse_da_overlap: 0.06780
+Taking mean hist data as background d = z_c - O
+min = 0.0723 s, decode = 0.1235 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1959 s, inc stats = 0.2096, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1224, add (DA)= 0.0001
+time_online 0.1959s
+Taking mean hist data as background d = z_c - O
+min = 0.0644 s, decode = 0.1225 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1871 s, inc stats = 0.2008, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1214, add (DA)= 0.0001
+time_online 0.1871s
+Taking mean hist data as background d = z_c - O
+min = 0.0736 s, decode = 0.1341 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2078 s, inc stats = 0.2176, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1330, add (DA)= 0.0001
+time_online 0.2078s
+Taking mean hist data as background d = z_c - O
+min = 0.0649 s, decode = 0.1198 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1848 s, inc stats = 0.1982, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1187, add (DA)= 0.0001
+time_online 0.1848s
+Taking mean hist data as background d = z_c - O
+min = 0.0601 s, decode = 0.1210 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1812 s, inc stats = 0.1948, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1199, add (DA)= 0.0001
+time_online 0.1812s
+Taking mean hist data as background d = z_c - O
+min = 0.0638 s, decode = 0.1343 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1982 s, inc stats = 0.2061, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1332, add (DA)= 0.0001
+time_online 0.1982s
+Taking mean hist data as background d = z_c - O
+min = 0.0648 s, decode = 0.1340 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1989 s, inc stats = 0.2089, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1329, add (DA)= 0.0001
+time_online 0.1989s
+Taking mean hist data as background d = z_c - O
+min = 0.0620 s, decode = 0.1224 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1845 s, inc stats = 0.1982, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1214, add (DA)= 0.0001
+time_online 0.1845s
+Taking mean hist data as background d = z_c - O
+min = 0.0640 s, decode = 0.1213 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1853 s, inc stats = 0.1990, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1201, add (DA)= 0.0001
+time_online 0.1853s
+Taking mean hist data as background d = z_c - O
+min = 0.0690 s, decode = 0.1229 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1920 s, inc stats = 19.3130, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1218, add (DA)= 0.0001
+time_online 0.1920s
+DA - - L2: 2349.68, L1: 2533.68, % Improve: 27.81%, DA_MAE: 0.02, mse_ref: 0.08, mse_DA: 0.066, time(s): 1.4087s,
+\% improve_point: 21.26, mse_ref_points: 4.955875660212499e-06, mse_da_points: 4.0877937909048105e-06, % improve_overlap: 71.93, mse_ref_overlap: 0.23914, mse_da_overlap: 0.07162
+Taking mean hist data as background d = z_c - O
+min = 0.0827 s, decode = 0.1329 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2158 s, inc stats = 0.2215, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1317, add (DA)= 0.0001
+time_online 0.2158s
+Taking mean hist data as background d = z_c - O
+min = 0.0644 s, decode = 0.1321 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1966 s, inc stats = 0.2041, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1310, add (DA)= 0.0001
+time_online 0.1966s
+Taking mean hist data as background d = z_c - O
+min = 0.0701 s, decode = 0.1326 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2028 s, inc stats = 0.2149, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1315, add (DA)= 0.0001
+time_online 0.2028s
+Taking mean hist data as background d = z_c - O
+min = 0.0662 s, decode = 0.1202 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1865 s, inc stats = 0.1987, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1191, add (DA)= 0.0001
+time_online 0.1865s
+Taking mean hist data as background d = z_c - O
+min = 0.0645 s, decode = 0.1213 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1858 s, inc stats = 0.1993, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1202, add (DA)= 0.0001
+time_online 0.1858s
+Taking mean hist data as background d = z_c - O
+min = 0.0644 s, decode = 0.1357 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2002 s, inc stats = 0.2139, 
+v_trunc (Latent to Reduced) = 0.0014, dec (Reduced to Full) = 0.1341, add (DA)= 0.0001
+time_online 0.2002s
+Taking mean hist data as background d = z_c - O
+min = 0.0670 s, decode = 0.1210 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1881 s, inc stats = 0.1965, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1199, add (DA)= 0.0001
+time_online 0.1881s
+Taking mean hist data as background d = z_c - O
+min = 0.0679 s, decode = 0.1221 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1901 s, inc stats = 0.2040, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1210, add (DA)= 0.0001
+time_online 0.1901s
+Taking mean hist data as background d = z_c - O
+min = 0.0709 s, decode = 0.1349 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2058 s, inc stats = 0.2195, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1338, add (DA)= 0.0001
+time_online 0.2058s
+Taking mean hist data as background d = z_c - O
+min = 0.0714 s, decode = 0.1215 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1930 s, inc stats = 0.2067, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1204, add (DA)= 0.0001
+time_online 0.1930s
+DA - - L2: 2760.61, L1: 2737.05, % Improve: 25.89%, DA_MAE: 0.03, mse_ref: 0.09, mse_DA: 0.075, time(s): 1.2770s,
+\% improve_point: 19.19, mse_ref_points: 5.414844296634659e-06, mse_da_points: 4.618756592879247e-06, % improve_overlap: 71.71, mse_ref_overlap: 0.24287, mse_da_overlap: 0.07277
+Taking mean hist data as background d = z_c - O
+min = 0.0716 s, decode = 0.1230 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1947 s, inc stats = 0.2083, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1219, add (DA)= 0.0001
+time_online 0.1947s
+Taking mean hist data as background d = z_c - O
+min = 0.0645 s, decode = 0.1222 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1868 s, inc stats = 0.1925, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1210, add (DA)= 0.0001
+time_online 0.1868s
+Taking mean hist data as background d = z_c - O
+min = 0.0637 s, decode = 0.1234 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1871 s, inc stats = 0.2008, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1222, add (DA)= 0.0001
+time_online 0.1871s
+Taking mean hist data as background d = z_c - O
+min = 0.0887 s, decode = 0.1324 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2211 s, inc stats = 0.2349, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1313, add (DA)= 0.0001
+time_online 0.2211s
+Taking mean hist data as background d = z_c - O
+min = 0.0637 s, decode = 0.1218 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1856 s, inc stats = 0.1970, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1207, add (DA)= 0.0001
+time_online 0.1856s
+Taking mean hist data as background d = z_c - O
+min = 0.0675 s, decode = 0.1313 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1989 s, inc stats = 0.2118, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1302, add (DA)= 0.0001
+time_online 0.1989s
+Taking mean hist data as background d = z_c - O
+min = 0.0661 s, decode = 0.1328 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1990 s, inc stats = 0.2050, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1317, add (DA)= 0.0001
+time_online 0.1990s
+Taking mean hist data as background d = z_c - O
+min = 0.0620 s, decode = 0.1225 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1846 s, inc stats = 0.1920, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1214, add (DA)= 0.0001
+time_online 0.1846s
+Taking mean hist data as background d = z_c - O
+min = 0.0643 s, decode = 0.1258 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1903 s, inc stats = 0.1976, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1247, add (DA)= 0.0001
+time_online 0.1903s
+Taking mean hist data as background d = z_c - O
+min = 0.0727 s, decode = 0.1106 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1834 s, inc stats = 19.3181, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1095, add (DA)= 0.0001
+time_online 0.1834s
+DA - - L2: 3097.31, L1: 2897.98, % Improve: 24.49%, DA_MAE: 0.03, mse_ref: 0.09, mse_DA: 0.081, time(s): 1.3603s,
+\% improve_point: 17.48, mse_ref_points: 5.724376246191642e-06, mse_da_points: 4.9913965381108e-06, % improve_overlap: 71.44, mse_ref_overlap: 0.24630, mse_da_overlap: 0.07410
+Taking mean hist data as background d = z_c - O
+min = 0.0647 s, decode = 0.1240 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1888 s, inc stats = 0.2022, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1228, add (DA)= 0.0001
+time_online 0.1888s
+Taking mean hist data as background d = z_c - O
+min = 0.0710 s, decode = 0.1336 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2047 s, inc stats = 0.2184, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1325, add (DA)= 0.0001
+time_online 0.2047s
+Taking mean hist data as background d = z_c - O
+min = 0.0704 s, decode = 0.1327 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2032 s, inc stats = 0.2150, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1316, add (DA)= 0.0001
+time_online 0.2032s
+Taking mean hist data as background d = z_c - O
+min = 0.0969 s, decode = 0.1238 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2208 s, inc stats = 0.2343, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1227, add (DA)= 0.0001
+time_online 0.2208s
+Taking mean hist data as background d = z_c - O
+min = 0.0786 s, decode = 0.1209 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1995 s, inc stats = 0.2133, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1197, add (DA)= 0.0001
+time_online 0.1995s
+Taking mean hist data as background d = z_c - O
+min = 0.0834 s, decode = 0.1221 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2056 s, inc stats = 0.2182, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1210, add (DA)= 0.0001
+time_online 0.2056s
+DA - - L2: 3302.85, L1: 2989.28, % Improve: 23.83%, DA_MAE: 0.03, mse_ref: 0.09, mse_DA: 0.083, time(s): 1.2963s,
+\% improve_point: 16.79, mse_ref_points: 5.8540618251705225e-06, mse_da_points: 5.138707204600884e-06, % improve_overlap: 71.31, mse_ref_overlap: 0.24830, mse_da_overlap: 0.07481
+Results of DA at 2020-08-22 15:02:43.407684. 
+      percent_improvement  ref_MAE_mean  ...       time  time_online
+0              68.496326      0.012622  ...  20.422513     0.267898
+1              64.400743      0.013497  ...   0.210665     0.194329
+2              60.801804      0.014444  ...   0.227017     0.206470
+3              57.913364      0.015342  ...   0.209615     0.195017
+4              56.247098      0.015883  ...   0.228199     0.212640
+..                   ...           ...  ...        ...          ...
+102            12.785738      0.046607  ...   0.220923     0.204699
+103            12.757367      0.046824  ...   0.216989     0.203211
+104            12.730152      0.047023  ...   0.236272     0.220779
+105            12.711465      0.047157  ...   0.215314     0.199545
+106            12.711603      0.047203  ...   0.220112     0.205583
+
+[107 rows x 20 columns]
+data fp  /home/mredstone/unstructuredCAE/data/subdomain_6/
+Mean historical data is: 1
+domain, other, pickle, dim 6 ['8'] /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/ 1
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/X_80_1D_clustered.pickle
+Shape read X:  (537, 26032)
+Clustering in 1D
+| Header             | Info                                                                         |
+|--------------------+------------------------------------------------------------------------------|
+| Experiment title   | MeanHist_80P_150E_1D2L                                                       |
+| Home dir           | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/         |
+| Results dir        | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/results/ |
+| Data fp            | /home/mredstone/unstructuredCAE/data/subdomain_6/                            |
+| Pickled data fp    | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/     |
+| Field name         | TracerGeorge                                                                 |
+| Using Loader       | <class 'VarDACAE.UnstructuredMesh.DataLoaderUnstructuredMesh.DataLoaderUnstructuredMesh'>     |
+| Compression Method | AE                                                                           |
+| Percentage         | 80                                                                           |
+| Seed               | 42                                                                           |
+| 3D                 | False                                                                        |
+| 2D                 | False                                                                        |
+| 1D                 | True                                                                         |
+Settings obj has MEAN hist data of: 1
+Initialising model of type  <class 'VarDACAE.AEs.AE_general.GenCAE'>
+Dim set in GenCAE:  1
+block is  Tucodec1D  and layer_kwargs is  {'B': 'NeXt1D', 'Cstd': 64, 'S': None, 'A': 'prelu', 'AS': None, 'DIM': 1, 'clusterInputSize': 26032, 'encode': True}
+When creating TucodecEncode1D in build, inputSize =  26032
+DIM USED  1
+When creating TucodecEncode1D, inputSize =  26032 with Cstd =  64
+Dim set in GenCAE:  1
+block is  Tucodec1D  and layer_kwargs is  {'B': 'NeXt1D', 'Cstd': 64, 'S': None, 'A': 'prelu', 'AS': None, 'DIM': 1, 'clusterInputSize': 26032, 'encode': False}
+When creating TucodecEncode1D in build, inputSize =  26032
+DIM USED  1
+------------------------------ Training subdomain 6 at 2020-08-22 15:02:52.794238. ------------------------------
+Loading data started 2020-08-22 15:02:52.794334
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/X_80_1D_clustered.pickle
+Shape read X:  (537, 26032)
+Clustering in 1D
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+test_X type:  <class 'numpy.ndarray'>
+test X shape 0 =  8  and batch  3
+Train loader data <torch.utils.data.dataloader.DataLoader object at 0x7f597ebd4470>
+Loading data finished 2020-08-22 15:03:05.786002
+Loop AE Train begins at  15:03:05.788536
+Training epoch begins:  0
+epoch [1/150], TRAIN: -loss:10687.12, av_diff: 0.32, time taken (m): 0.02m
+epoch [1/150], TEST: -loss:99186.2344, time taken(m): 0.00m
+Training epoch ends:  0
+Training epoch begins:  1
+Training epoch ends:  1
+Training epoch begins:  2
+Training epoch ends:  2
+Training epoch begins:  3
+Training epoch ends:  3
+Training epoch begins:  4
+Training epoch ends:  4
+Training epoch begins:  5
+epoch [6/150], TRAIN: -loss:3899.27, av_diff: 0.02, time taken (m): 0.01m
+Training epoch ends:  5
+Training epoch begins:  6
+Training epoch ends:  6
+Training epoch begins:  7
+Training epoch ends:  7
+Training epoch begins:  8
+Training epoch ends:  8
+Training epoch begins:  9
+Training epoch ends:  9
+Training epoch begins:  10
+epoch [11/150], TRAIN: -loss:2187.75, av_diff: 0.00, time taken (m): 0.02m
+epoch [11/150], TEST: -loss:98665.2998, time taken(m): 0.00m
+Training epoch ends:  10
+Training epoch begins:  11
+Training epoch ends:  11
+Training epoch begins:  12
+Training epoch ends:  12
+Training epoch begins:  13
+Training epoch ends:  13
+Training epoch begins:  14
+Training epoch ends:  14
+Training epoch begins:  15
+epoch [16/150], TRAIN: -loss:1774.58, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  15
+Training epoch begins:  16
+Training epoch ends:  16
+Training epoch begins:  17
+Training epoch ends:  17
+Training epoch begins:  18
+Training epoch ends:  18
+Training epoch begins:  19
+Training epoch ends:  19
+Training epoch begins:  20
+epoch [21/150], TRAIN: -loss:1429.07, av_diff: 0.00, time taken (m): 0.01m
+epoch [21/150], TEST: -loss:98532.5513, time taken(m): 0.00m
+Training epoch ends:  20
+Training epoch begins:  21
+Training epoch ends:  21
+Training epoch begins:  22
+Training epoch ends:  22
+Training epoch begins:  23
+Training epoch ends:  23
+Training epoch begins:  24
+Training epoch ends:  24
+Training epoch begins:  25
+epoch [26/150], TRAIN: -loss:1042.09, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  25
+Training epoch begins:  26
+Training epoch ends:  26
+Training epoch begins:  27
+Training epoch ends:  27
+Training epoch begins:  28
+Training epoch ends:  28
+Training epoch begins:  29
+Training epoch ends:  29
+Training epoch begins:  30
+epoch [31/150], TRAIN: -loss:816.58, av_diff: 0.01, time taken (m): 0.01m
+epoch [31/150], TEST: -loss:97686.1973, time taken(m): 0.00m
+Training epoch ends:  30
+Training epoch begins:  31
+Training epoch ends:  31
+Training epoch begins:  32
+Training epoch ends:  32
+Training epoch begins:  33
+Training epoch ends:  33
+Training epoch begins:  34
+Training epoch ends:  34
+Training epoch begins:  35
+epoch [36/150], TRAIN: -loss:646.65, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  35
+Training epoch begins:  36
+Training epoch ends:  36
+Training epoch begins:  37
+Training epoch ends:  37
+Training epoch begins:  38
+Training epoch ends:  38
+Training epoch begins:  39
+Training epoch ends:  39
+Training epoch begins:  40
+epoch [41/150], TRAIN: -loss:548.65, av_diff: 0.00, time taken (m): 0.01m
+epoch [41/150], TEST: -loss:97638.1914, time taken(m): 0.00m
+Training epoch ends:  40
+Training epoch begins:  41
+Training epoch ends:  41
+Training epoch begins:  42
+Training epoch ends:  42
+Training epoch begins:  43
+Training epoch ends:  43
+Training epoch begins:  44
+Training epoch ends:  44
+Training epoch begins:  45
+epoch [46/150], TRAIN: -loss:497.21, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  45
+Training epoch begins:  46
+Training epoch ends:  46
+Training epoch begins:  47
+Training epoch ends:  47
+Training epoch begins:  48
+Training epoch ends:  48
+Training epoch begins:  49
+Training epoch ends:  49
+Training epoch begins:  50
+epoch [51/150], TRAIN: -loss:431.93, av_diff: 0.00, time taken (m): 0.01m
+epoch [51/150], TEST: -loss:97344.0908, time taken(m): 0.00m
+Training epoch ends:  50
+Training epoch begins:  51
+Training epoch ends:  51
+Training epoch begins:  52
+Training epoch ends:  52
+Training epoch begins:  53
+Training epoch ends:  53
+Training epoch begins:  54
+Training epoch ends:  54
+Training epoch begins:  55
+epoch [56/150], TRAIN: -loss:360.93, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  55
+Training epoch begins:  56
+Training epoch ends:  56
+Training epoch begins:  57
+Training epoch ends:  57
+Training epoch begins:  58
+Training epoch ends:  58
+Training epoch begins:  59
+Training epoch ends:  59
+Training epoch begins:  60
+epoch [61/150], TRAIN: -loss:317.38, av_diff: 0.00, time taken (m): 0.02m
+epoch [61/150], TEST: -loss:96921.4961, time taken(m): 0.00m
+Training epoch ends:  60
+Training epoch begins:  61
+Training epoch ends:  61
+Training epoch begins:  62
+Training epoch ends:  62
+Training epoch begins:  63
+Training epoch ends:  63
+Training epoch begins:  64
+Training epoch ends:  64
+Training epoch begins:  65
+epoch [66/150], TRAIN: -loss:334.83, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  65
+Training epoch begins:  66
+Training epoch ends:  66
+Training epoch begins:  67
+Training epoch ends:  67
+Training epoch begins:  68
+Training epoch ends:  68
+Training epoch begins:  69
+Training epoch ends:  69
+Training epoch begins:  70
+epoch [71/150], TRAIN: -loss:408.18, av_diff: 0.00, time taken (m): 0.01m
+epoch [71/150], TEST: -loss:96840.8188, time taken(m): 0.00m
+Training epoch ends:  70
+Training epoch begins:  71
+Training epoch ends:  71
+Training epoch begins:  72
+Training epoch ends:  72
+Training epoch begins:  73
+Training epoch ends:  73
+Training epoch begins:  74
+Training epoch ends:  74
+Training epoch begins:  75
+epoch [76/150], TRAIN: -loss:314.46, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  75
+Training epoch begins:  76
+Training epoch ends:  76
+Training epoch begins:  77
+Training epoch ends:  77
+Training epoch begins:  78
+Training epoch ends:  78
+Training epoch begins:  79
+Training epoch ends:  79
+Training epoch begins:  80
+epoch [81/150], TRAIN: -loss:218.75, av_diff: 0.01, time taken (m): 0.01m
+epoch [81/150], TEST: -loss:96885.8008, time taken(m): 0.00m
+Training epoch ends:  80
+Training epoch begins:  81
+Training epoch ends:  81
+Training epoch begins:  82
+Training epoch ends:  82
+Training epoch begins:  83
+Training epoch ends:  83
+Training epoch begins:  84
+Training epoch ends:  84
+Training epoch begins:  85
+epoch [86/150], TRAIN: -loss:172.56, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  85
+Training epoch begins:  86
+Training epoch ends:  86
+Training epoch begins:  87
+Training epoch ends:  87
+Training epoch begins:  88
+Training epoch ends:  88
+Training epoch begins:  89
+Training epoch ends:  89
+Training epoch begins:  90
+epoch [91/150], TRAIN: -loss:151.22, av_diff: 0.00, time taken (m): 0.01m
+epoch [91/150], TEST: -loss:96688.9258, time taken(m): 0.00m
+Training epoch ends:  90
+Training epoch begins:  91
+Training epoch ends:  91
+Training epoch begins:  92
+Training epoch ends:  92
+Training epoch begins:  93
+Training epoch ends:  93
+Training epoch begins:  94
+Training epoch ends:  94
+Training epoch begins:  95
+epoch [96/150], TRAIN: -loss:143.00, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  95
+Training epoch begins:  96
+Training epoch ends:  96
+Training epoch begins:  97
+Training epoch ends:  97
+Training epoch begins:  98
+Training epoch ends:  98
+Training epoch begins:  99
+Training epoch ends:  99
+Training epoch begins:  100
+epoch [101/150], TRAIN: -loss:138.24, av_diff: 0.00, time taken (m): 0.01m
+epoch [101/150], TEST: -loss:96628.4189, time taken(m): 0.00m
+Training epoch ends:  100
+Training epoch begins:  101
+Training epoch ends:  101
+Training epoch begins:  102
+Training epoch ends:  102
+Training epoch begins:  103
+Training epoch ends:  103
+Training epoch begins:  104
+Training epoch ends:  104
+Training epoch begins:  105
+epoch [106/150], TRAIN: -loss:130.95, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  105
+Training epoch begins:  106
+Training epoch ends:  106
+Training epoch begins:  107
+Training epoch ends:  107
+Training epoch begins:  108
+Training epoch ends:  108
+Training epoch begins:  109
+Training epoch ends:  109
+Training epoch begins:  110
+epoch [111/150], TRAIN: -loss:126.29, av_diff: 0.00, time taken (m): 0.01m
+epoch [111/150], TEST: -loss:96551.8535, time taken(m): 0.00m
+Training epoch ends:  110
+Training epoch begins:  111
+Training epoch ends:  111
+Training epoch begins:  112
+Training epoch ends:  112
+Training epoch begins:  113
+Training epoch ends:  113
+Training epoch begins:  114
+Training epoch ends:  114
+Training epoch begins:  115
+epoch [116/150], TRAIN: -loss:116.62, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  115
+Training epoch begins:  116
+Training epoch ends:  116
+Training epoch begins:  117
+Training epoch ends:  117
+Training epoch begins:  118
+Training epoch ends:  118
+Training epoch begins:  119
+Training epoch ends:  119
+Training epoch begins:  120
+epoch [121/150], TRAIN: -loss:101.93, av_diff: 0.00, time taken (m): 0.01m
+epoch [121/150], TEST: -loss:96523.9414, time taken(m): 0.00m
+Training epoch ends:  120
+Training epoch begins:  121
+Training epoch ends:  121
+Training epoch begins:  122
+Training epoch ends:  122
+Training epoch begins:  123
+Training epoch ends:  123
+Training epoch begins:  124
+Training epoch ends:  124
+Training epoch begins:  125
+epoch [126/150], TRAIN: -loss:88.84, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  125
+Training epoch begins:  126
+Training epoch ends:  126
+Training epoch begins:  127
+Training epoch ends:  127
+Training epoch begins:  128
+Training epoch ends:  128
+Training epoch begins:  129
+Training epoch ends:  129
+Training epoch begins:  130
+epoch [131/150], TRAIN: -loss:76.37, av_diff: 0.00, time taken (m): 0.01m
+epoch [131/150], TEST: -loss:96419.2354, time taken(m): 0.00m
+Training epoch ends:  130
+Training epoch begins:  131
+Training epoch ends:  131
+Training epoch begins:  132
+Training epoch ends:  132
+Training epoch begins:  133
+Training epoch ends:  133
+Training epoch begins:  134
+Training epoch ends:  134
+Training epoch begins:  135
+epoch [136/150], TRAIN: -loss:70.69, av_diff: 0.00, time taken (m): 0.01m
+Training epoch ends:  135
+Training epoch begins:  136
+Training epoch ends:  136
+Training epoch begins:  137
+Training epoch ends:  137
+Training epoch begins:  138
+Training epoch ends:  138
+Training epoch begins:  139
+Training epoch ends:  139
+Training epoch begins:  140
+epoch [141/150], TRAIN: -loss:73.62, av_diff: 0.00, time taken (m): 0.01m
+epoch [141/150], TEST: -loss:96312.9316, time taken(m): 0.00m
+Training epoch ends:  140
+Training epoch begins:  141
+Training epoch ends:  141
+Training epoch begins:  142
+Training epoch ends:  142
+Training epoch begins:  143
+Training epoch ends:  143
+Training epoch begins:  144
+Training epoch ends:  144
+Training epoch begins:  145
+epoch [146/150], TRAIN: -loss:80.88, av_diff: 0.01, time taken (m): 0.01m
+Training epoch ends:  145
+Training epoch begins:  146
+Training epoch ends:  146
+Training epoch begins:  147
+Training epoch ends:  147
+Training epoch begins:  148
+Training epoch ends:  148
+Training epoch begins:  149
+epoch [150/150], TRAIN: -loss:119.73, av_diff: 0.01, time taken (m): 0.01m
+epoch [150/150], TEST: -loss:96365.9722, time taken(m): 0.00m
+Training epoch ends:  149
+Loop AE Train Ends at  15:05:25.764162
+------------------------------ DA subdomain 6 at 2020-08-22 15:05:25.843132. ------------------------------
+----------------------------- START OF DA ----------------------
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/X_80_1D_clustered.pickle
+Shape read X:  (537, 26032)
+Clustering in 1D
+----------------------------- DA Loading Data and Splitting ----------------------
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+Following loading data for BatchDA 
+ train_X = (429, 26032) , test_X = (107, 26032), X = (537, 26032)
+-----------------------------DA Init----------------------
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/X_80_1D_clustered.pickle
+Shape read X:  (537, 26032)
+Clustering in 1D
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+Choosing between background states 1
+Selecting mean historical data
+Taking mean hist data as background d = z_c - O
+----------------------------- DA Testing for each test case ----------------------
+Taking mean hist data as background d = z_c - O
+min = 0.0579 s, decode = 0.1234 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1814 s, inc stats = 46.6620, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1223, add (DA)= 0.0001
+time_online 0.1814s
+Taking mean hist data as background d = z_c - O
+min = 0.0586 s, decode = 0.1398 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1986 s, inc stats = 0.2134, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1386, add (DA)= 0.0002
+time_online 0.1986s
+Taking mean hist data as background d = z_c - O
+min = 0.0893 s, decode = 0.1317 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2211 s, inc stats = 0.2348, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1306, add (DA)= 0.0001
+time_online 0.2211s
+Taking mean hist data as background d = z_c - O
+min = 0.0771 s, decode = 0.1227 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2000 s, inc stats = 0.2086, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1216, add (DA)= 0.0001
+time_online 0.2000s
+Taking mean hist data as background d = z_c - O
+min = 0.0666 s, decode = 0.1314 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1981 s, inc stats = 0.2080, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1302, add (DA)= 0.0001
+time_online 0.1981s
+Taking mean hist data as background d = z_c - O
+min = 0.0598 s, decode = 0.1358 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1958 s, inc stats = 0.2075, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1347, add (DA)= 0.0001
+time_online 0.1958s
+Taking mean hist data as background d = z_c - O
+min = 0.0660 s, decode = 0.1323 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1985 s, inc stats = 0.2043, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1312, add (DA)= 0.0001
+time_online 0.1985s
+Taking mean hist data as background d = z_c - O
+min = 0.0655 s, decode = 0.1238 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1895 s, inc stats = 0.2009, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1227, add (DA)= 0.0001
+time_online 0.1895s
+Taking mean hist data as background d = z_c - O
+min = 0.0680 s, decode = 0.1235 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1916 s, inc stats = 0.2052, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1224, add (DA)= 0.0001
+time_online 0.1916s
+Taking mean hist data as background d = z_c - O
+min = 0.0643 s, decode = 0.1238 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1883 s, inc stats = 0.2021, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1227, add (DA)= 0.0001
+time_online 0.1883s
+Taking mean hist data as background d = z_c - O
+min = 0.0587 s, decode = 0.1346 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1935 s, inc stats = 0.2068, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1335, add (DA)= 0.0001
+time_online 0.1935s
+DA - - L2: 199015.37, L1: 12247.59, % Improve: 75.35%, DA_MAE: 0.00, mse_ref: 0.21, mse_DA: 0.051, time(s): 4.5336s,
+\% improve_point: 75.95, mse_ref_points: 8.162003865993753e-06, mse_da_points: 1.9628992464823293e-06, % improve_overlap: 75.98, mse_ref_overlap: 0.21247, mse_da_overlap: 0.05104
+Taking mean hist data as background d = z_c - O
+min = 0.0625 s, decode = 0.1230 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1856 s, inc stats = 0.1978, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1219, add (DA)= 0.0001
+time_online 0.1856s
+Taking mean hist data as background d = z_c - O
+min = 0.0750 s, decode = 0.1205 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1956 s, inc stats = 0.2094, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1194, add (DA)= 0.0001
+time_online 0.1956s
+Taking mean hist data as background d = z_c - O
+min = 0.0559 s, decode = 0.1227 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1787 s, inc stats = 0.1970, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1216, add (DA)= 0.0001
+time_online 0.1787s
+Taking mean hist data as background d = z_c - O
+min = 0.0687 s, decode = 0.1216 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1904 s, inc stats = 0.2013, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1204, add (DA)= 0.0001
+time_online 0.1904s
+Taking mean hist data as background d = z_c - O
+min = 0.0601 s, decode = 0.1252 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1855 s, inc stats = 0.1990, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1241, add (DA)= 0.0001
+time_online 0.1855s
+Taking mean hist data as background d = z_c - O
+min = 0.1279 s, decode = 0.0509 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1789 s, inc stats = 0.1878, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.0497, add (DA)= 0.0001
+time_online 0.1789s
+Taking mean hist data as background d = z_c - O
+min = 0.1166 s, decode = 0.1260 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2426 s, inc stats = 0.2551, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1248, add (DA)= 0.0001
+time_online 0.2426s
+Taking mean hist data as background d = z_c - O
+min = 0.0717 s, decode = 0.1135 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1853 s, inc stats = 0.1925, 
+v_trunc (Latent to Reduced) = 0.0009, dec (Reduced to Full) = 0.1124, add (DA)= 0.0001
+time_online 0.1853s
+Taking mean hist data as background d = z_c - O
+min = 0.1048 s, decode = 0.1229 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2278 s, inc stats = 0.2385, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1217, add (DA)= 0.0001
+time_online 0.2278s
+Taking mean hist data as background d = z_c - O
+min = 0.0774 s, decode = 0.1238 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2013 s, inc stats = 47.8007, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1227, add (DA)= 0.0001
+time_online 0.2013s
+DA - - L2: 167914.10, L1: 10881.54, % Improve: 77.11%, DA_MAE: 0.00, mse_ref: 0.21, mse_DA: 0.047, time(s): 4.7415s,
+\% improve_point: 77.30, mse_ref_points: 7.984749960522767e-06, mse_da_points: 1.8187122077496932e-06, % improve_overlap: 77.36, mse_ref_overlap: 0.20783, mse_da_overlap: 0.04720
+Taking mean hist data as background d = z_c - O
+min = 0.1173 s, decode = 0.1271 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2446 s, inc stats = 0.2566, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1259, add (DA)= 0.0002
+time_online 0.2446s
+Taking mean hist data as background d = z_c - O
+min = 0.1067 s, decode = 0.1227 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2296 s, inc stats = 0.2357, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1215, add (DA)= 0.0001
+time_online 0.2296s
+Taking mean hist data as background d = z_c - O
+min = 0.1143 s, decode = 0.1226 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2370 s, inc stats = 0.2494, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1214, add (DA)= 0.0001
+time_online 0.2370s
+Taking mean hist data as background d = z_c - O
+min = 0.0624 s, decode = 0.1231 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1856 s, inc stats = 0.1990, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1220, add (DA)= 0.0001
+time_online 0.1856s
+Taking mean hist data as background d = z_c - O
+min = 0.0599 s, decode = 0.1207 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1808 s, inc stats = 0.1907, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1196, add (DA)= 0.0001
+time_online 0.1808s
+Taking mean hist data as background d = z_c - O
+min = 0.1062 s, decode = 0.1209 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2272 s, inc stats = 0.2397, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1198, add (DA)= 0.0001
+time_online 0.2272s
+Taking mean hist data as background d = z_c - O
+min = 0.0858 s, decode = 0.1336 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2195 s, inc stats = 0.2332, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1324, add (DA)= 0.0001
+time_online 0.2195s
+Taking mean hist data as background d = z_c - O
+min = 0.0574 s, decode = 0.1347 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1922 s, inc stats = 0.2058, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1335, add (DA)= 0.0001
+time_online 0.1922s
+Taking mean hist data as background d = z_c - O
+min = 0.0874 s, decode = 0.1223 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2098 s, inc stats = 0.2235, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1212, add (DA)= 0.0001
+time_online 0.2098s
+Taking mean hist data as background d = z_c - O
+min = 0.0907 s, decode = 0.1358 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2266 s, inc stats = 0.2367, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1347, add (DA)= 0.0001
+time_online 0.2266s
+DA - - L2: 116350.47, L1: 9825.33, % Improve: 78.33%, DA_MAE: 0.00, mse_ref: 0.21, mse_DA: 0.045, time(s): 3.2860s,
+\% improve_point: 78.29, mse_ref_points: 7.910012560614941e-06, mse_da_points: 1.723297108655528e-06, % improve_overlap: 78.39, mse_ref_overlap: 0.20586, mse_da_overlap: 0.04464
+Taking mean hist data as background d = z_c - O
+min = 0.0833 s, decode = 0.1257 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2091 s, inc stats = 0.2227, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1246, add (DA)= 0.0001
+time_online 0.2091s
+Taking mean hist data as background d = z_c - O
+min = 0.1041 s, decode = 0.1364 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2407 s, inc stats = 0.2484, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1351, add (DA)= 0.0003
+time_online 0.2407s
+Taking mean hist data as background d = z_c - O
+min = 0.0733 s, decode = 0.1228 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1962 s, inc stats = 0.2016, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1216, add (DA)= 0.0001
+time_online 0.1962s
+Taking mean hist data as background d = z_c - O
+min = 0.0784 s, decode = 0.1239 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2024 s, inc stats = 0.2069, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1228, add (DA)= 0.0001
+time_online 0.2024s
+Taking mean hist data as background d = z_c - O
+min = 0.0673 s, decode = 0.1369 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2043 s, inc stats = 0.2180, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1358, add (DA)= 0.0001
+time_online 0.2043s
+Taking mean hist data as background d = z_c - O
+min = 0.0918 s, decode = 0.1314 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2233 s, inc stats = 0.2321, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1303, add (DA)= 0.0001
+time_online 0.2233s
+Taking mean hist data as background d = z_c - O
+min = 0.1010 s, decode = 0.1232 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2244 s, inc stats = 0.2381, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1221, add (DA)= 0.0001
+time_online 0.2244s
+Taking mean hist data as background d = z_c - O
+min = 0.0882 s, decode = 0.1243 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2126 s, inc stats = 0.2180, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1231, add (DA)= 0.0001
+time_online 0.2126s
+Taking mean hist data as background d = z_c - O
+min = 0.0909 s, decode = 0.1255 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2165 s, inc stats = 0.2297, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1243, add (DA)= 0.0001
+time_online 0.2165s
+Taking mean hist data as background d = z_c - O
+min = 0.1085 s, decode = 0.1236 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2322 s, inc stats = 46.8437, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1225, add (DA)= 0.0001
+time_online 0.2322s
+DA - - L2: 90066.94, L1: 9077.31, % Improve: 78.91%, DA_MAE: 0.00, mse_ref: 0.21, mse_DA: 0.045, time(s): 3.6768s,
+\% improve_point: 78.46, mse_ref_points: 7.946701020050124e-06, mse_da_points: 1.7170724940752032e-06, % improve_overlap: 78.60, mse_ref_overlap: 0.20679, mse_da_overlap: 0.04438
+Taking mean hist data as background d = z_c - O
+min = 0.0646 s, decode = 0.1213 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1860 s, inc stats = 0.1996, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1201, add (DA)= 0.0001
+time_online 0.1860s
+Taking mean hist data as background d = z_c - O
+min = 0.1109 s, decode = 0.1283 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2393 s, inc stats = 0.2526, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1271, add (DA)= 0.0001
+time_online 0.2393s
+Taking mean hist data as background d = z_c - O
+min = 0.0959 s, decode = 0.1242 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2202 s, inc stats = 0.2335, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1230, add (DA)= 0.0001
+time_online 0.2202s
+Taking mean hist data as background d = z_c - O
+min = 0.1139 s, decode = 0.1375 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2516 s, inc stats = 0.2593, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1364, add (DA)= 0.0001
+time_online 0.2516s
+Taking mean hist data as background d = z_c - O
+min = 0.0978 s, decode = 0.1248 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2228 s, inc stats = 0.2315, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1237, add (DA)= 0.0001
+time_online 0.2228s
+Taking mean hist data as background d = z_c - O
+min = 0.0995 s, decode = 0.1265 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2262 s, inc stats = 0.2327, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1253, add (DA)= 0.0001
+time_online 0.2262s
+Taking mean hist data as background d = z_c - O
+min = 0.1306 s, decode = 0.1328 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2634 s, inc stats = 0.2773, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1316, add (DA)= 0.0001
+time_online 0.2634s
+Taking mean hist data as background d = z_c - O
+min = 0.0843 s, decode = 0.1314 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2158 s, inc stats = 0.2233, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1302, add (DA)= 0.0001
+time_online 0.2158s
+Taking mean hist data as background d = z_c - O
+min = 0.1016 s, decode = 0.1316 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2332 s, inc stats = 0.2425, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1305, add (DA)= 0.0001
+time_online 0.2332s
+Taking mean hist data as background d = z_c - O
+min = 0.0648 s, decode = 0.1251 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1900 s, inc stats = 0.2037, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1239, add (DA)= 0.0001
+time_online 0.1900s
+DA - - L2: 73755.55, L1: 8546.14, % Improve: 76.98%, DA_MAE: 0.00, mse_ref: 0.22, mse_DA: 0.058, time(s): 3.0025s,
+\% improve_point: 74.37, mse_ref_points: 8.33451961454621e-06, mse_da_points: 2.213168668820614e-06, % improve_overlap: 74.52, mse_ref_overlap: 0.21685, mse_da_overlap: 0.05723
+Taking mean hist data as background d = z_c - O
+min = 0.1202 s, decode = 0.1318 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2522 s, inc stats = 0.2666, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1307, add (DA)= 0.0001
+time_online 0.2522s
+Taking mean hist data as background d = z_c - O
+min = 0.2114 s, decode = 0.1248 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.3364 s, inc stats = 0.3444, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1237, add (DA)= 0.0001
+time_online 0.3364s
+Taking mean hist data as background d = z_c - O
+min = 0.1177 s, decode = 0.1176 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2353 s, inc stats = 0.2439, 
+v_trunc (Latent to Reduced) = 0.0020, dec (Reduced to Full) = 0.1154, add (DA)= 0.0001
+time_online 0.2353s
+Taking mean hist data as background d = z_c - O
+min = 0.0668 s, decode = 0.1333 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2002 s, inc stats = 0.2146, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1321, add (DA)= 0.0001
+time_online 0.2002s
+Taking mean hist data as background d = z_c - O
+min = 0.1007 s, decode = 0.1315 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2322 s, inc stats = 0.2458, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1304, add (DA)= 0.0001
+time_online 0.2322s
+Taking mean hist data as background d = z_c - O
+min = 0.1225 s, decode = 0.1244 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2470 s, inc stats = 0.2603, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1233, add (DA)= 0.0001
+time_online 0.2470s
+Taking mean hist data as background d = z_c - O
+min = 0.0707 s, decode = 0.1235 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1943 s, inc stats = 0.2077, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1223, add (DA)= 0.0001
+time_online 0.1943s
+Taking mean hist data as background d = z_c - O
+min = 0.1618 s, decode = 0.1207 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2826 s, inc stats = 0.2895, 
+v_trunc (Latent to Reduced) = 0.0022, dec (Reduced to Full) = 0.1184, add (DA)= 0.0001
+time_online 0.2826s
+Taking mean hist data as background d = z_c - O
+min = 0.0747 s, decode = 0.1263 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2012 s, inc stats = 0.2075, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1252, add (DA)= 0.0001
+time_online 0.2012s
+Taking mean hist data as background d = z_c - O
+min = 0.0667 s, decode = 0.1237 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1905 s, inc stats = 47.3250, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1226, add (DA)= 0.0001
+time_online 0.1905s
+DA - - L2: 62932.13, L1: 8217.86, % Improve: 75.29%, DA_MAE: 0.00, mse_ref: 0.23, mse_DA: 0.069, time(s): 3.3239s,
+\% improve_point: 71.05, mse_ref_points: 8.707829174779674e-06, mse_da_points: 2.6486437653984593e-06, % improve_overlap: 71.19, mse_ref_overlap: 0.22656, mse_da_overlap: 0.06859
+Taking mean hist data as background d = z_c - O
+min = 0.0670 s, decode = 0.1309 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1980 s, inc stats = 0.2056, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1297, add (DA)= 0.0001
+time_online 0.1980s
+Taking mean hist data as background d = z_c - O
+min = 0.0746 s, decode = 0.1245 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1992 s, inc stats = 0.2041, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1234, add (DA)= 0.0001
+time_online 0.1992s
+Taking mean hist data as background d = z_c - O
+min = 0.0691 s, decode = 0.1351 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2044 s, inc stats = 0.2160, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1340, add (DA)= 0.0001
+time_online 0.2044s
+Taking mean hist data as background d = z_c - O
+min = 0.0688 s, decode = 0.1236 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1925 s, inc stats = 0.2061, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1225, add (DA)= 0.0001
+time_online 0.1925s
+Taking mean hist data as background d = z_c - O
+min = 0.0686 s, decode = 0.1206 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1893 s, inc stats = 0.1966, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1195, add (DA)= 0.0001
+time_online 0.1893s
+Taking mean hist data as background d = z_c - O
+min = 0.0671 s, decode = 0.1204 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1876 s, inc stats = 0.2013, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1193, add (DA)= 0.0001
+time_online 0.1876s
+Taking mean hist data as background d = z_c - O
+min = 0.0702 s, decode = 0.1217 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1920 s, inc stats = 0.2056, 
+v_trunc (Latent to Reduced) = 0.0011, dec (Reduced to Full) = 0.1205, add (DA)= 0.0001
+time_online 0.1920s
+Taking mean hist data as background d = z_c - O
+min = 0.0660 s, decode = 0.1340 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2001 s, inc stats = 0.2138, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1329, add (DA)= 0.0001
+time_online 0.2001s
+Taking mean hist data as background d = z_c - O
+min = 0.0739 s, decode = 0.1320 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2060 s, inc stats = 0.2199, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1309, add (DA)= 0.0001
+time_online 0.2060s
+Taking mean hist data as background d = z_c - O
+min = 0.0688 s, decode = 0.1237 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1926 s, inc stats = 0.2059, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1225, add (DA)= 0.0001
+time_online 0.1926s
+DA - - L2: 55006.84, L1: 7988.17, % Improve: 73.97%, DA_MAE: 0.00, mse_ref: 0.23, mse_DA: 0.076, time(s): 2.8852s,
+\% improve_point: 69.00, mse_ref_points: 8.992561675798104e-06, mse_da_points: 2.9321450664655577e-06, % improve_overlap: 69.16, mse_ref_overlap: 0.23395, mse_da_overlap: 0.07593
+Taking mean hist data as background d = z_c - O
+min = 0.0698 s, decode = 0.1352 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2051 s, inc stats = 0.2188, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1340, add (DA)= 0.0001
+time_online 0.2051s
+Taking mean hist data as background d = z_c - O
+min = 0.0570 s, decode = 0.1374 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1946 s, inc stats = 0.2074, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1362, add (DA)= 0.0003
+time_online 0.1946s
+Taking mean hist data as background d = z_c - O
+min = 0.0931 s, decode = 0.1246 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2179 s, inc stats = 0.2314, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1234, add (DA)= 0.0002
+time_online 0.2179s
+Taking mean hist data as background d = z_c - O
+min = 0.0645 s, decode = 0.1218 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1865 s, inc stats = 0.2001, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1207, add (DA)= 0.0001
+time_online 0.1865s
+Taking mean hist data as background d = z_c - O
+min = 0.1000 s, decode = 0.1255 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2257 s, inc stats = 0.2383, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1244, add (DA)= 0.0001
+time_online 0.2257s
+Taking mean hist data as background d = z_c - O
+min = 0.0784 s, decode = 0.1226 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2011 s, inc stats = 0.2138, 
+v_trunc (Latent to Reduced) = 0.0009, dec (Reduced to Full) = 0.1215, add (DA)= 0.0001
+time_online 0.2011s
+Taking mean hist data as background d = z_c - O
+min = 0.0702 s, decode = 0.1230 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1933 s, inc stats = 0.2060, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1219, add (DA)= 0.0001
+time_online 0.1933s
+Taking mean hist data as background d = z_c - O
+min = 0.0618 s, decode = 0.1233 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1852 s, inc stats = 0.1916, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1221, add (DA)= 0.0001
+time_online 0.1852s
+Taking mean hist data as background d = z_c - O
+min = 0.0598 s, decode = 0.1257 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1856 s, inc stats = 0.1909, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1246, add (DA)= 0.0001
+time_online 0.1856s
+Taking mean hist data as background d = z_c - O
+min = 0.0696 s, decode = 0.1340 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2038 s, inc stats = 47.5599, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1329, add (DA)= 0.0001
+time_online 0.2038s
+DA - - L2: 49397.41, L1: 7916.98, % Improve: 73.33%, DA_MAE: 0.00, mse_ref: 0.24, mse_DA: 0.079, time(s): 3.1399s,
+\% improve_point: 68.41, mse_ref_points: 9.19327380729071e-06, mse_da_points: 3.0396729413186545e-06, % improve_overlap: 68.60, mse_ref_overlap: 0.23914, mse_da_overlap: 0.07861
+Taking mean hist data as background d = z_c - O
+min = 0.0614 s, decode = 0.1243 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1858 s, inc stats = 0.1990, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1230, add (DA)= 0.0002
+time_online 0.1858s
+Taking mean hist data as background d = z_c - O
+min = 0.0644 s, decode = 0.1223 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1869 s, inc stats = 0.2002, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1212, add (DA)= 0.0001
+time_online 0.1869s
+Taking mean hist data as background d = z_c - O
+min = 0.0892 s, decode = 0.1323 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2217 s, inc stats = 0.2355, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1312, add (DA)= 0.0001
+time_online 0.2217s
+Taking mean hist data as background d = z_c - O
+min = 0.0667 s, decode = 0.1351 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2020 s, inc stats = 0.2148, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1340, add (DA)= 0.0001
+time_online 0.2020s
+Taking mean hist data as background d = z_c - O
+min = 0.0701 s, decode = 0.1345 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2048 s, inc stats = 0.2181, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1334, add (DA)= 0.0001
+time_online 0.2048s
+Taking mean hist data as background d = z_c - O
+min = 0.0667 s, decode = 0.1226 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1895 s, inc stats = 0.2013, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1215, add (DA)= 0.0001
+time_online 0.1895s
+Taking mean hist data as background d = z_c - O
+min = 0.0667 s, decode = 0.1358 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2026 s, inc stats = 0.2135, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1346, add (DA)= 0.0001
+time_online 0.2026s
+Taking mean hist data as background d = z_c - O
+min = 0.0692 s, decode = 0.1241 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1934 s, inc stats = 0.2070, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1230, add (DA)= 0.0001
+time_online 0.1934s
+Taking mean hist data as background d = z_c - O
+min = 0.0764 s, decode = 0.1221 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1986 s, inc stats = 0.2122, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1209, add (DA)= 0.0001
+time_online 0.1986s
+Taking mean hist data as background d = z_c - O
+min = 0.0658 s, decode = 0.1353 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2012 s, inc stats = 0.2121, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1342, add (DA)= 0.0001
+time_online 0.2012s
+DA - - L2: 44653.68, L1: 7674.69, % Improve: 73.27%, DA_MAE: 0.00, mse_ref: 0.24, mse_DA: 0.079, time(s): 2.8184s,
+\% improve_point: 68.65, mse_ref_points: 9.337354967549963e-06, mse_da_points: 3.0455078124673596e-06, % improve_overlap: 68.85, mse_ref_overlap: 0.24287, mse_da_overlap: 0.07870
+Taking mean hist data as background d = z_c - O
+min = 0.0681 s, decode = 0.1330 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2012 s, inc stats = 0.2147, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1319, add (DA)= 0.0001
+time_online 0.2012s
+Taking mean hist data as background d = z_c - O
+min = 0.1219 s, decode = 0.1277 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2497 s, inc stats = 0.2563, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1266, add (DA)= 0.0001
+time_online 0.2497s
+Taking mean hist data as background d = z_c - O
+min = 0.0646 s, decode = 0.1236 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1883 s, inc stats = 0.2001, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1224, add (DA)= 0.0002
+time_online 0.1883s
+Taking mean hist data as background d = z_c - O
+min = 0.1358 s, decode = 0.1349 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.2709 s, inc stats = 0.2845, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1338, add (DA)= 0.0001
+time_online 0.2709s
+Taking mean hist data as background d = z_c - O
+min = 0.0970 s, decode = 0.1306 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2277 s, inc stats = 0.2346, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1295, add (DA)= 0.0001
+time_online 0.2277s
+Taking mean hist data as background d = z_c - O
+min = 0.0616 s, decode = 0.1241 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1859 s, inc stats = 0.2016, 
+v_trunc (Latent to Reduced) = 0.0011, dec (Reduced to Full) = 0.1229, add (DA)= 0.0001
+time_online 0.1859s
+Taking mean hist data as background d = z_c - O
+min = 0.0635 s, decode = 0.1214 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1850 s, inc stats = 0.1987, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1203, add (DA)= 0.0001
+time_online 0.1850s
+Taking mean hist data as background d = z_c - O
+min = 0.0662 s, decode = 0.1240 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1903 s, inc stats = 0.1959, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1229, add (DA)= 0.0001
+time_online 0.1903s
+Taking mean hist data as background d = z_c - O
+min = 0.0665 s, decode = 0.1245 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1911 s, inc stats = 0.2022, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1234, add (DA)= 0.0001
+time_online 0.1911s
+Taking mean hist data as background d = z_c - O
+min = 0.0661 s, decode = 0.1235 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1897 s, inc stats = 47.3701, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1224, add (DA)= 0.0001
+time_online 0.1897s
+DA - - L2: 40846.52, L1: 7585.86, % Improve: 73.22%, DA_MAE: 0.00, mse_ref: 0.25, mse_DA: 0.080, time(s): 3.0283s,
+\% improve_point: 68.74, mse_ref_points: 9.469048767158467e-06, mse_da_points: 3.06520667625652e-06, % improve_overlap: 68.95, mse_ref_overlap: 0.24630, mse_da_overlap: 0.07921
+Taking mean hist data as background d = z_c - O
+min = 0.0599 s, decode = 0.1238 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.1839 s, inc stats = 0.1957, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1226, add (DA)= 0.0002
+time_online 0.1839s
+Taking mean hist data as background d = z_c - O
+min = 0.0693 s, decode = 0.1359 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2053 s, inc stats = 0.2189, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1347, add (DA)= 0.0001
+time_online 0.2053s
+Taking mean hist data as background d = z_c - O
+min = 0.0683 s, decode = 0.1239 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1924 s, inc stats = 0.1994, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1228, add (DA)= 0.0001
+time_online 0.1924s
+Taking mean hist data as background d = z_c - O
+min = 0.0923 s, decode = 0.1218 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2143 s, inc stats = 0.2279, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1207, add (DA)= 0.0001
+time_online 0.2143s
+Taking mean hist data as background d = z_c - O
+min = 0.0671 s, decode = 0.1239 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.1912 s, inc stats = 0.2044, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1228, add (DA)= 0.0001
+time_online 0.1912s
+Taking mean hist data as background d = z_c - O
+min = 0.0764 s, decode = 0.1243 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2008 s, inc stats = 0.2078, 
+v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1232, add (DA)= 0.0001
+time_online 0.2008s
+DA - - L2: 38882.23, L1: 7511.69, % Improve: 73.29%, DA_MAE: 0.00, mse_ref: 0.25, mse_DA: 0.080, time(s): 2.8703s,
+\% improve_point: 68.84, mse_ref_points: 9.545959776422533e-06, mse_da_points: 3.072770437410799e-06, % improve_overlap: 69.04, mse_ref_overlap: 0.24830, mse_da_overlap: 0.07941
+Results of DA at 2020-08-22 15:11:49.338447. 
+      percent_improvement  ref_MAE_mean  ...       time  time_online
+0              92.359342      0.001691  ...  47.752704     0.181391
+1              89.205869      0.001697  ...   0.216112     0.198628
+2              87.115482      0.001704  ...   0.236833     0.221126
+3              86.015781      0.001711  ...   0.211210     0.199983
+4              83.757589      0.001717  ...   0.210667     0.198052
+..                   ...           ...  ...        ...          ...
+102            73.740244      0.002206  ...   0.221343     0.205303
+103            74.214461      0.002198  ...   0.201446     0.192357
+104            74.663539      0.002188  ...   0.230598     0.214300
+105            75.090588      0.002178  ...   0.207085     0.191170
+106            75.487741      0.002168  ...   0.209853     0.200843
+
+[107 rows x 20 columns]
+------------------------- Ended at 2020-08-22 15:11:50.555598 -------------------- 
+

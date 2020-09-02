@@ -42,6 +42,8 @@ pip install -r requirements.txt
 
 -**LocalisationResults** contains visualisation of localisation clustering procedure
 
+-**Results** contains a handful of results for various Data Assimilation background states, using different models and localised nodes
+
 -**data**, **train**, **nn**, **AEs**, **settings**, **VarDA**, **utils**, **ML_utils** are taken from https://github.com/julianmack/Data_Assimilation with modifications to fit our extensions.
 
 # Running

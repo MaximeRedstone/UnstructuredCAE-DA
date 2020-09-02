@@ -1,0 +1,997 @@
+Path ['/home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE', '/usr/lib/python36.zip', '/usr/lib/python3.6', '/usr/lib/python3.6/lib-dynload', '/home/mredstone/.local/lib/python3.6/site-packages', '/usr/local/lib/python3.6/dist-packages', '/usr/lib/python3/dist-packages', '/home/mredstone/unstructuredCAE/code/Data_Assimilation/src/', '/Users/maxime/IndividualProject/code/Data_Assimilation/src/']
+
+------------------------- Simulation Started at 2020-08-26 15:10:49.360011 ------------------- 
+
+data fp  /home/mredstone/unstructuredCAE/data/subdomain_8/
+domain, other, pickle, dim 8 ['6'] /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/ 1
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/X_40_1D_clustered.pickle
+Shape read X:  (537, 8957)
+Clustering in 1D
+| Header             | Info                                                                         |
+|--------------------+------------------------------------------------------------------------------|
+| Experiment title   | Idx_40P_150E_1D2L                                                            |
+| Home dir           | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/         |
+| Results dir        | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/results/ |
+| Data fp            | /home/mredstone/unstructuredCAE/data/subdomain_8/                            |
+| Pickled data fp    | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/     |
+| Field name         | TracerGeorge                                                                 |
+| Using Loader       | <class 'VarDACAE.UnstructuredMesh.DataLoaderUnstructuredMesh.DataLoaderUnstructuredMesh'>     |
+| Compression Method | AE                                                                           |
+| Percentage         | 40                                                                           |
+| Seed               | 42                                                                           |
+| 3D                 | False                                                                        |
+| 2D                 | False                                                                        |
+| 1D                 | True                                                                         |
+Initialising model of type  <class 'VarDACAE.AEs.AE_general.GenCAE'>
+Dim set in GenCAE:  1
+block is  Tucodec1D  and layer_kwargs is  {'B': 'NeXt1D', 'Cstd': 64, 'S': None, 'A': 'prelu', 'AS': None, 'DIM': 1, 'clusterInputSize': 8957, 'encode': True}
+When creating TucodecEncode1D in build, inputSize =  8957
+DIM USED  1
+When creating TucodecEncode1D, inputSize =  8957 with Cstd =  64
+Dim set in GenCAE:  1
+block is  Tucodec1D  and layer_kwargs is  {'B': 'NeXt1D', 'Cstd': 64, 'S': None, 'A': 'prelu', 'AS': None, 'DIM': 1, 'clusterInputSize': 8957, 'encode': False}
+When creating TucodecEncode1D in build, inputSize =  8957
+DIM USED  1
+Number of parameters: 10011902
+------------------------------ Training subdomain 8 at 2020-08-26 15:10:54.212110. ------------------------------
+Loading data started 2020-08-26 15:10:54.212379
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/X_40_1D_clustered.pickle
+Shape read X:  (537, 8957)
+Clustering in 1D
+shape of mean (8957,) and std (8957,)
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+test_X type:  <class 'numpy.ndarray'>
+test X shape 0 =  8  and batch  3
+Train loader data <torch.utils.data.dataloader.DataLoader object at 0x7fb9f20f9240>
+Loading data finished 2020-08-26 15:11:01.661836
+Loop AE Train begins at  15:11:01.667836
+Training epoch begins:  0
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [1/150], TRAIN: -loss:10399.67, av_diff: 0.91, time taken (m): 0.04m
+epoch [1/150], TEST: -loss:10597.0789, time taken(m): 0.03m
+Training epoch begins:  1
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  2
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  3
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  4
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  5
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [6/150], TRAIN: -loss:2027.10, av_diff: 0.01, time taken (m): 0.04m
+Training epoch begins:  6
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  7
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  8
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  9
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  10
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [11/150], TRAIN: -loss:248.07, av_diff: 0.02, time taken (m): 0.05m
+epoch [11/150], TEST: -loss:3602.6692, time taken(m): 0.02m
+Training epoch begins:  11
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  12
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  13
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  14
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  15
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [16/150], TRAIN: -loss:54.55, av_diff: 0.00, time taken (m): 0.05m
+Training epoch begins:  16
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  17
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  18
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  19
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  20
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [21/150], TRAIN: -loss:24.93, av_diff: 0.00, time taken (m): 0.04m
+epoch [21/150], TEST: -loss:297.6033, time taken(m): 0.02m
+Training epoch begins:  21
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  22
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  23
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  24
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  25
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [26/150], TRAIN: -loss:18.63, av_diff: 0.00, time taken (m): 0.03m
+Training epoch begins:  26
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  27
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  28
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  29
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  30
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [31/150], TRAIN: -loss:18.00, av_diff: 0.00, time taken (m): 0.04m
+epoch [31/150], TEST: -loss:123.5048, time taken(m): 0.02m
+Training epoch begins:  31
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  32
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  33
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  34
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  35
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [36/150], TRAIN: -loss:17.85, av_diff: 0.00, time taken (m): 0.04m
+Training epoch begins:  36
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  37
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  38
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  39
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  40
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [41/150], TRAIN: -loss:17.42, av_diff: 0.00, time taken (m): 0.05m
+epoch [41/150], TEST: -loss:107.4264, time taken(m): 0.01m
+Training epoch begins:  41
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  42
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  43
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  44
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  45
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [46/150], TRAIN: -loss:17.05, av_diff: 0.00, time taken (m): 0.03m
+Training epoch begins:  46
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  47
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  48
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  49
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  50
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [51/150], TRAIN: -loss:17.59, av_diff: 0.00, time taken (m): 0.04m
+epoch [51/150], TEST: -loss:107.8154, time taken(m): 0.01m
+Training epoch begins:  51
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  52
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  53
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  54
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  55
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [56/150], TRAIN: -loss:16.97, av_diff: 0.00, time taken (m): 0.04m
+Training epoch begins:  56
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  57
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  58
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  59
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  60
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [61/150], TRAIN: -loss:18.60, av_diff: 0.01, time taken (m): 0.04m
+epoch [61/150], TEST: -loss:117.6841, time taken(m): 0.02m
+Training epoch begins:  61
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  62
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  63
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  64
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  65
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [66/150], TRAIN: -loss:17.11, av_diff: 0.00, time taken (m): 0.04m
+Training epoch begins:  66
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  67
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  68
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  69
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  70
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [71/150], TRAIN: -loss:17.96, av_diff: 0.00, time taken (m): 0.04m
+epoch [71/150], TEST: -loss:104.8448, time taken(m): 0.02m
+Training epoch begins:  71
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  72
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  73
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  74
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  75
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [76/150], TRAIN: -loss:17.67, av_diff: 0.00, time taken (m): 0.04m
+Training epoch begins:  76
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  77
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  78
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  79
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  80
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [81/150], TRAIN: -loss:17.92, av_diff: 0.01, time taken (m): 0.04m
+epoch [81/150], TEST: -loss:95.4815, time taken(m): 0.02m
+Training epoch begins:  81
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  82
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  83
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  84
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  85
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [86/150], TRAIN: -loss:20.67, av_diff: 0.01, time taken (m): 0.04m
+Training epoch begins:  86
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  87
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  88
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  89
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  90
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [91/150], TRAIN: -loss:17.75, av_diff: 0.00, time taken (m): 0.04m
+epoch [91/150], TEST: -loss:106.9802, time taken(m): 0.01m
+Training epoch begins:  91
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  92
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  93
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  94
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  95
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [96/150], TRAIN: -loss:18.15, av_diff: 0.01, time taken (m): 0.04m
+Training epoch begins:  96
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  97
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  98
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  99
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  100
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [101/150], TRAIN: -loss:17.23, av_diff: 0.01, time taken (m): 0.04m
+epoch [101/150], TEST: -loss:117.7173, time taken(m): 0.02m
+Training epoch begins:  101
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  102
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  103
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  104
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  105
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [106/150], TRAIN: -loss:18.82, av_diff: 0.01, time taken (m): 0.01m
+Training epoch begins:  106
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  107
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  108
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  109
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  110
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [111/150], TRAIN: -loss:16.61, av_diff: 0.00, time taken (m): 0.02m
+epoch [111/150], TEST: -loss:102.0158, time taken(m): 0.01m
+Training epoch begins:  111
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  112
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  113
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  114
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  115
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [116/150], TRAIN: -loss:17.27, av_diff: 0.00, time taken (m): 0.06m
+Training epoch begins:  116
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  117
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  118
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  119
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  120
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [121/150], TRAIN: -loss:16.07, av_diff: 0.00, time taken (m): 0.05m
+epoch [121/150], TEST: -loss:109.3590, time taken(m): 0.03m
+Training epoch begins:  121
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  122
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  123
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  124
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  125
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [126/150], TRAIN: -loss:15.93, av_diff: 0.00, time taken (m): 0.10m
+Training epoch begins:  126
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  127
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  128
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  129
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  130
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [131/150], TRAIN: -loss:15.45, av_diff: 0.00, time taken (m): 0.07m
+epoch [131/150], TEST: -loss:108.8932, time taken(m): 0.04m
+Training epoch begins:  131
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  132
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  133
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  134
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  135
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [136/150], TRAIN: -loss:16.92, av_diff: 0.01, time taken (m): 0.05m
+Training epoch begins:  136
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  137
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  138
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  139
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  140
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [141/150], TRAIN: -loss:16.16, av_diff: 0.01, time taken (m): 0.06m
+epoch [141/150], TEST: -loss:95.3415, time taken(m): 0.03m
+Training epoch begins:  141
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  142
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  143
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  144
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  145
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [146/150], TRAIN: -loss:15.60, av_diff: 0.01, time taken (m): 0.05m
+Training epoch begins:  146
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  147
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  148
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+Training epoch begins:  149
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([3, 8957])
+data shape in one loop:  torch.Size([2, 8957])
+epoch [150/150], TRAIN: -loss:16.07, av_diff: 0.00, time taken (m): 0.04m
+epoch [150/150], TEST: -loss:112.1429, time taken(m): 0.03m
+Loop AE Train Ends at  15:18:19.869255
+------------------------------ DA subdomain 8 at 2020-08-26 15:18:19.933278. ------------------------------
+----------------------------- START OF DA ----------------------
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/X_40_1D_clustered.pickle
+Shape read X:  (537, 8957)
+Clustering in 1D
+----------------------------- DA Loading Data and Splitting ----------------------
+shape of mean (8957,) and std (8957,)
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+Following loading data for BatchDA 
+ train_X = (429, 8957) , test_X = (107, 8957), X = (537, 8957)
+-----------------------------DA Init----------------------
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_8/X_40_1D_clustered.pickle
+Shape read X:  (537, 8957)
+Clustering in 1D
+shape of mean (8957,) and std (8957,)
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+Selecting one DA index:  10
+----------------------------- DA Testing for each test case ----------------------
+Taking mean of historical data
+Shape of w_0 =  (429,)
+minCostFunction = 0.2497 s, v_trunc (Latent to Reduced) = 0.0024, dec (Reduced to Full) = 0.2983, add (DA)= 0.0001decode = 0.3009 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5506 s, inc stats = 11.9937, 
+minCostFunction = 0.2640 s, v_trunc (Latent to Reduced) = 0.0020, dec (Reduced to Full) = 0.3441, add (DA)= 0.0001decode = 0.3462 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6103 s, inc stats = 0.6135, 
+minCostFunction = 0.1471 s, v_trunc (Latent to Reduced) = 0.0052, dec (Reduced to Full) = 0.1507, add (DA)= 0.0001decode = 0.1560 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.3032 s, inc stats = 0.3064, 
+minCostFunction = 0.1027 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2727, add (DA)= 0.0001decode = 0.2738 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.3765 s, inc stats = 0.3801, 
+minCostFunction = 0.2885 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.3877, add (DA)= 0.0000decode = 0.3888 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6773 s, inc stats = 0.6812, 
+minCostFunction = 0.2568 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.6817, add (DA)= 0.0001decode = 0.6828 s, unnorm = 0.0002 s, TOTAL = unnormalising + decoding + minimising = 0.9397 s, inc stats = 0.9431, 
+minCostFunction = 0.2843 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.3112, add (DA)= 0.0000decode = 0.3123 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5967 s, inc stats = 0.6007, 
+minCostFunction = 0.1851 s, v_trunc (Latent to Reduced) = 0.0023, dec (Reduced to Full) = 0.3315, add (DA)= 0.0001decode = 0.3339 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5191 s, inc stats = 0.5231, 
+minCostFunction = 0.2176 s, v_trunc (Latent to Reduced) = 0.0070, dec (Reduced to Full) = 0.3175, add (DA)= 0.0001decode = 0.3246 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5422 s, inc stats = 0.5462, 
+minCostFunction = 0.2327 s, v_trunc (Latent to Reduced) = 0.0137, dec (Reduced to Full) = 0.4282, add (DA)= 0.0001decode = 0.4420 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6749 s, inc stats = 0.6781, 
+minCostFunction = 0.2356 s, v_trunc (Latent to Reduced) = 0.0024, dec (Reduced to Full) = 0.3227, add (DA)= 0.0001decode = 0.3252 s, unnorm = 0.0000 s, TOTAL = unnormalising + decoding + minimising = 0.5609 s, inc stats = 0.5633, 
+DA - - L2: 121.11, L1: 596.87, % Improve: 10.22%, DA_MAE: 0.13, mse_ref: 0.17, mse_DA: 0.156, time(s): 1.8967s,
+\% improve_point: 9.18, mse_ref_points: 1.921800582454184e-05, mse_da_points: 1.7453750711280463e-05, % improve_overlap: 5.82, mse_ref_overlap: 0.16460, mse_da_overlap: 0.15501
+minCostFunction = 0.2207 s, v_trunc (Latent to Reduced) = 0.0054, dec (Reduced to Full) = 0.3825, add (DA)= 0.0001decode = 0.3880 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6087 s, inc stats = 0.6118, 
+minCostFunction = 0.2421 s, v_trunc (Latent to Reduced) = 0.0029, dec (Reduced to Full) = 0.2747, add (DA)= 0.0000decode = 0.2777 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5199 s, inc stats = 0.5239, 
+minCostFunction = 0.1902 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2674, add (DA)= 0.0001decode = 0.2685 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4587 s, inc stats = 0.4629, 
+minCostFunction = 0.2817 s, v_trunc (Latent to Reduced) = 0.0121, dec (Reduced to Full) = 0.4042, add (DA)= 0.0001decode = 0.4164 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6982 s, inc stats = 0.7014, 
+minCostFunction = 0.2998 s, v_trunc (Latent to Reduced) = 0.0025, dec (Reduced to Full) = 0.4146, add (DA)= 0.0001decode = 0.4172 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.7170 s, inc stats = 0.7206, 
+minCostFunction = 0.2716 s, v_trunc (Latent to Reduced) = 0.0099, dec (Reduced to Full) = 0.2462, add (DA)= 0.0001decode = 0.2562 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5278 s, inc stats = 0.5319, 
+minCostFunction = 0.2631 s, v_trunc (Latent to Reduced) = 0.0023, dec (Reduced to Full) = 0.2491, add (DA)= 0.0001decode = 0.2515 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5147 s, inc stats = 0.5179, 
+minCostFunction = 0.3289 s, v_trunc (Latent to Reduced) = 0.0019, dec (Reduced to Full) = 0.2634, add (DA)= 0.0000decode = 0.2654 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5943 s, inc stats = 0.5985, 
+minCostFunction = 0.2278 s, v_trunc (Latent to Reduced) = 0.0021, dec (Reduced to Full) = 0.3112, add (DA)= 0.0001decode = 0.3135 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5414 s, inc stats = 0.5456, 
+minCostFunction = 0.2527 s, v_trunc (Latent to Reduced) = 0.0068, dec (Reduced to Full) = 0.3315, add (DA)= 0.0001decode = 0.3384 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5911 s, inc stats = 0.5951, 
+DA - - L2: 200.83, L1: 763.41, % Improve: 10.14%, DA_MAE: 0.13, mse_ref: 0.17, mse_DA: 0.158, time(s): 1.2715s,
+\% improve_point: 7.93, mse_ref_points: 1.91021360157635e-05, mse_da_points: 1.7586228446925067e-05, % improve_overlap: 2.33, mse_ref_overlap: 0.16240, mse_da_overlap: 0.15854
+minCostFunction = 0.3077 s, v_trunc (Latent to Reduced) = 0.0024, dec (Reduced to Full) = 0.2021, add (DA)= 0.0001decode = 0.2046 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5124 s, inc stats = 0.5164, 
+minCostFunction = 0.1714 s, v_trunc (Latent to Reduced) = 0.0056, dec (Reduced to Full) = 0.3067, add (DA)= 0.0001decode = 0.3124 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4839 s, inc stats = 0.4881, 
+minCostFunction = 0.2344 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.4209, add (DA)= 0.0001decode = 0.4220 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6565 s, inc stats = 0.6605, 
+minCostFunction = 0.2545 s, v_trunc (Latent to Reduced) = 0.0030, dec (Reduced to Full) = 0.3156, add (DA)= 0.0001decode = 0.3187 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5733 s, inc stats = 0.5774, 
+minCostFunction = 0.3244 s, v_trunc (Latent to Reduced) = 0.0174, dec (Reduced to Full) = 0.2521, add (DA)= 0.0001decode = 0.2696 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5941 s, inc stats = 0.5982, 
+minCostFunction = 0.1262 s, v_trunc (Latent to Reduced) = 0.0025, dec (Reduced to Full) = 0.3634, add (DA)= 0.0001decode = 0.3660 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4923 s, inc stats = 0.4955, 
+minCostFunction = 0.2282 s, v_trunc (Latent to Reduced) = 0.0053, dec (Reduced to Full) = 0.2964, add (DA)= 0.0001decode = 0.3018 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5300 s, inc stats = 0.5340, 
+minCostFunction = 0.1617 s, v_trunc (Latent to Reduced) = 0.0067, dec (Reduced to Full) = 0.2846, add (DA)= 0.0000decode = 0.2913 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4530 s, inc stats = 0.4569, 
+minCostFunction = 0.1942 s, v_trunc (Latent to Reduced) = 0.0016, dec (Reduced to Full) = 0.3837, add (DA)= 0.0001decode = 0.3854 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5797 s, inc stats = 0.5838, 
+minCostFunction = 0.2398 s, v_trunc (Latent to Reduced) = 0.0098, dec (Reduced to Full) = 0.4148, add (DA)= 0.0001decode = 0.4248 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6647 s, inc stats = 0.6681, 
+DA - - L2: 252.17, L1: 830.44, % Improve: 10.01%, DA_MAE: 0.13, mse_ref: 0.17, mse_DA: 0.159, time(s): 1.0423s,
+\% improve_point: 7.58, mse_ref_points: 1.923560617214775e-05, mse_da_points: 1.777796475609203e-05, % improve_overlap: 1.90, mse_ref_overlap: 0.16286, mse_da_overlap: 0.15972
+minCostFunction = 0.3317 s, v_trunc (Latent to Reduced) = 0.0065, dec (Reduced to Full) = 0.3256, add (DA)= 0.0001decode = 0.3322 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6640 s, inc stats = 0.6673, 
+minCostFunction = 0.2439 s, v_trunc (Latent to Reduced) = 0.0044, dec (Reduced to Full) = 0.4099, add (DA)= 0.0001decode = 0.4144 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6584 s, inc stats = 0.6618, 
+minCostFunction = 0.2520 s, v_trunc (Latent to Reduced) = 0.0089, dec (Reduced to Full) = 0.1844, add (DA)= 0.0001decode = 0.1934 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4455 s, inc stats = 0.4495, 
+minCostFunction = 0.2568 s, v_trunc (Latent to Reduced) = 0.0042, dec (Reduced to Full) = 0.3554, add (DA)= 0.0001decode = 0.3598 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6166 s, inc stats = 0.6210, 
+minCostFunction = 0.1600 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.4821, add (DA)= 0.0001decode = 0.4832 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6433 s, inc stats = 0.6473, 
+minCostFunction = 0.2260 s, v_trunc (Latent to Reduced) = 0.0097, dec (Reduced to Full) = 0.3660, add (DA)= 0.0001decode = 0.3758 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6019 s, inc stats = 0.6053, 
+minCostFunction = 0.1983 s, v_trunc (Latent to Reduced) = 0.0041, dec (Reduced to Full) = 0.2361, add (DA)= 0.0001decode = 0.2403 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4386 s, inc stats = 0.4427, 
+minCostFunction = 0.1629 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2834, add (DA)= 0.0000decode = 0.2844 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4474 s, inc stats = 0.4507, 
+minCostFunction = 0.1663 s, v_trunc (Latent to Reduced) = 0.0045, dec (Reduced to Full) = 0.3592, add (DA)= 0.0001decode = 0.3638 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5302 s, inc stats = 0.5341, 
+minCostFunction = 0.1944 s, v_trunc (Latent to Reduced) = 0.0243, dec (Reduced to Full) = 0.3254, add (DA)= 0.0001decode = 0.3497 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5442 s, inc stats = 0.5483, 
+DA - - L2: 352.90, L1: 935.67, % Improve: 9.91%, DA_MAE: 0.13, mse_ref: 0.18, mse_DA: 0.164, time(s): 0.9261s,
+\% improve_point: 7.68, mse_ref_points: 1.9784141079882655e-05, mse_da_points: 1.8259945405778775e-05, % improve_overlap: 2.87, mse_ref_overlap: 0.16810, mse_da_overlap: 0.16296
+minCostFunction = 0.1677 s, v_trunc (Latent to Reduced) = 0.0025, dec (Reduced to Full) = 0.3256, add (DA)= 0.0001decode = 0.3282 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4960 s, inc stats = 0.4992, 
+minCostFunction = 0.1462 s, v_trunc (Latent to Reduced) = 0.0054, dec (Reduced to Full) = 0.2989, add (DA)= 0.0001decode = 0.3044 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4507 s, inc stats = 0.4539, 
+minCostFunction = 0.2610 s, v_trunc (Latent to Reduced) = 0.0068, dec (Reduced to Full) = 0.3039, add (DA)= 0.0000decode = 0.3107 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5718 s, inc stats = 0.5750, 
+minCostFunction = 0.3141 s, v_trunc (Latent to Reduced) = 0.0042, dec (Reduced to Full) = 0.4787, add (DA)= 0.0001decode = 0.4831 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.7972 s, inc stats = 0.8006, 
+minCostFunction = 0.1769 s, v_trunc (Latent to Reduced) = 0.0009, dec (Reduced to Full) = 0.3241, add (DA)= 0.0001decode = 0.3251 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5021 s, inc stats = 0.5062, 
+minCostFunction = 0.2571 s, v_trunc (Latent to Reduced) = 0.0028, dec (Reduced to Full) = 0.3361, add (DA)= 0.0001decode = 0.3391 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5963 s, inc stats = 0.5996, 
+minCostFunction = 0.4736 s, v_trunc (Latent to Reduced) = 0.0022, dec (Reduced to Full) = 0.3785, add (DA)= 0.0001decode = 0.3808 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.8545 s, inc stats = 0.8578, 
+minCostFunction = 0.4141 s, v_trunc (Latent to Reduced) = 0.0066, dec (Reduced to Full) = 0.2553, add (DA)= 0.0001decode = 0.2620 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6761 s, inc stats = 0.6794, 
+minCostFunction = 0.1654 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1650, add (DA)= 0.0001decode = 0.1660 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.3314 s, inc stats = 0.3347, 
+minCostFunction = 0.2653 s, v_trunc (Latent to Reduced) = 0.0009, dec (Reduced to Full) = 0.3990, add (DA)= 0.0001decode = 0.4000 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6653 s, inc stats = 0.6686, 
+DA - - L2: 710.31, L1: 1150.57, % Improve: 9.96%, DA_MAE: 0.14, mse_ref: 0.19, mse_DA: 0.177, time(s): 0.8622s,
+\% improve_point: 7.95, mse_ref_points: 2.148904935637146e-05, mse_da_points: 1.9759725121060607e-05, % improve_overlap: 4.58, mse_ref_overlap: 0.18616, mse_da_overlap: 0.17611
+minCostFunction = 0.3035 s, v_trunc (Latent to Reduced) = 0.0030, dec (Reduced to Full) = 0.2855, add (DA)= 0.0000decode = 0.2886 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5921 s, inc stats = 0.5961, 
+minCostFunction = 0.2907 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2913, add (DA)= 0.0001decode = 0.2924 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5832 s, inc stats = 0.5864, 
+minCostFunction = 0.1672 s, v_trunc (Latent to Reduced) = 0.0023, dec (Reduced to Full) = 0.2150, add (DA)= 0.0000decode = 0.2173 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.3845 s, inc stats = 0.3878, 
+minCostFunction = 0.1989 s, v_trunc (Latent to Reduced) = 0.0061, dec (Reduced to Full) = 0.2453, add (DA)= 0.0001decode = 0.2515 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4504 s, inc stats = 0.4537, 
+minCostFunction = 0.2865 s, v_trunc (Latent to Reduced) = 0.0029, dec (Reduced to Full) = 0.2995, add (DA)= 0.0000decode = 0.3024 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5890 s, inc stats = 0.5929, 
+minCostFunction = 0.1225 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2099, add (DA)= 0.0000decode = 0.2110 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.3335 s, inc stats = 0.3368, 
+minCostFunction = 0.1736 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.3013, add (DA)= 0.0001decode = 0.3024 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4760 s, inc stats = 0.4801, 
+minCostFunction = 0.3202 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2957, add (DA)= 0.0001decode = 0.2968 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6172 s, inc stats = 0.6199, 
+minCostFunction = 0.3370 s, v_trunc (Latent to Reduced) = 0.0039, dec (Reduced to Full) = 0.2315, add (DA)= 0.0001decode = 0.2355 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5726 s, inc stats = 0.5766, 
+minCostFunction = 0.2609 s, v_trunc (Latent to Reduced) = 0.0169, dec (Reduced to Full) = 0.3340, add (DA)= 0.0001decode = 0.3510 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6119 s, inc stats = 12.2910, 
+DA - - L2: 985.73, L1: 1347.49, % Improve: 9.82%, DA_MAE: 0.15, mse_ref: 0.21, mse_DA: 0.191, time(s): 0.9988s,
+\% improve_point: 7.88, mse_ref_points: 2.3112836228646893e-05, mse_da_points: 2.127968149573138e-05, % improve_overlap: 5.37, mse_ref_overlap: 0.19989, mse_da_overlap: 0.18734
+minCostFunction = 0.2724 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.1896, add (DA)= 0.0001decode = 0.1907 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4632 s, inc stats = 0.4674, 
+minCostFunction = 0.2603 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.3777, add (DA)= 0.0001decode = 0.3788 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6392 s, inc stats = 0.6425, 
+minCostFunction = 0.2507 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.3603, add (DA)= 0.0001decode = 0.3615 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6123 s, inc stats = 0.6168, 
+minCostFunction = 0.2659 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2758, add (DA)= 0.0001decode = 0.2769 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5429 s, inc stats = 0.5471, 
+minCostFunction = 0.2756 s, v_trunc (Latent to Reduced) = 0.0021, dec (Reduced to Full) = 0.4060, add (DA)= 0.0000decode = 0.4082 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6839 s, inc stats = 0.6880, 
+minCostFunction = 0.2639 s, v_trunc (Latent to Reduced) = 0.0053, dec (Reduced to Full) = 0.3749, add (DA)= 0.0001decode = 0.3803 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6443 s, inc stats = 0.6484, 
+minCostFunction = 0.3408 s, v_trunc (Latent to Reduced) = 0.0100, dec (Reduced to Full) = 0.5649, add (DA)= 0.0001decode = 0.5750 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.9158 s, inc stats = 0.9191, 
+minCostFunction = 0.3596 s, v_trunc (Latent to Reduced) = 0.0053, dec (Reduced to Full) = 0.4777, add (DA)= 0.0001decode = 0.4831 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.8428 s, inc stats = 0.8460, 
+minCostFunction = 0.2204 s, v_trunc (Latent to Reduced) = 0.0024, dec (Reduced to Full) = 0.2954, add (DA)= 0.0001decode = 0.2979 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5184 s, inc stats = 0.5224, 
+minCostFunction = 0.4269 s, v_trunc (Latent to Reduced) = 0.0051, dec (Reduced to Full) = 0.4357, add (DA)= 0.0001decode = 0.4409 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.8680 s, inc stats = 0.8712, 
+DA - - L2: 1204.19, L1: 1494.37, % Improve: 9.56%, DA_MAE: 0.16, mse_ref: 0.22, mse_DA: 0.202, time(s): 0.9539s,
+\% improve_point: 7.68, mse_ref_points: 2.445691533744615e-05, mse_da_points: 2.2584559460801714e-05, % improve_overlap: 5.64, mse_ref_overlap: 0.21106, mse_da_overlap: 0.19740
+minCostFunction = 0.2104 s, v_trunc (Latent to Reduced) = 0.0098, dec (Reduced to Full) = 0.2356, add (DA)= 0.0001decode = 0.2456 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4560 s, inc stats = 0.4601, 
+minCostFunction = 0.1748 s, v_trunc (Latent to Reduced) = 0.0021, dec (Reduced to Full) = 0.2338, add (DA)= 0.0001decode = 0.2360 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4108 s, inc stats = 0.4150, 
+minCostFunction = 0.2620 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2668, add (DA)= 0.0001decode = 0.2678 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5299 s, inc stats = 0.5331, 
+minCostFunction = 0.3273 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2811, add (DA)= 0.0001decode = 0.2822 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6095 s, inc stats = 0.6128, 
+minCostFunction = 0.1911 s, v_trunc (Latent to Reduced) = 0.0045, dec (Reduced to Full) = 0.1474, add (DA)= 0.0001decode = 0.1520 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.3431 s, inc stats = 0.3464, 
+minCostFunction = 0.2799 s, v_trunc (Latent to Reduced) = 0.0029, dec (Reduced to Full) = 0.1893, add (DA)= 0.0001decode = 0.1923 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4722 s, inc stats = 0.4762, 
+minCostFunction = 0.2797 s, v_trunc (Latent to Reduced) = 0.0022, dec (Reduced to Full) = 0.2690, add (DA)= 0.0001decode = 0.2712 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5509 s, inc stats = 0.5542, 
+minCostFunction = 0.2401 s, v_trunc (Latent to Reduced) = 0.0025, dec (Reduced to Full) = 0.4041, add (DA)= 0.0001decode = 0.4067 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6468 s, inc stats = 0.6501, 
+minCostFunction = 0.2441 s, v_trunc (Latent to Reduced) = 0.0068, dec (Reduced to Full) = 0.3706, add (DA)= 0.0001decode = 0.3775 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6217 s, inc stats = 0.6260, 
+minCostFunction = 0.2045 s, v_trunc (Latent to Reduced) = 0.0024, dec (Reduced to Full) = 0.2329, add (DA)= 0.0001decode = 0.2354 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4400 s, inc stats = 0.4433, 
+DA - - L2: 1425.90, L1: 1635.66, % Improve: 9.27%, DA_MAE: 0.16, mse_ref: 0.23, mse_DA: 0.213, time(s): 0.8997s,
+\% improve_point: 7.33, mse_ref_points: 2.558745586083833e-05, mse_da_points: 2.374548816603032e-05, % improve_overlap: 5.27, mse_ref_overlap: 0.22038, mse_da_overlap: 0.20748
+minCostFunction = 0.2817 s, v_trunc (Latent to Reduced) = 0.0110, dec (Reduced to Full) = 0.2500, add (DA)= 0.0001decode = 0.2610 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5428 s, inc stats = 0.5461, 
+minCostFunction = 0.2583 s, v_trunc (Latent to Reduced) = 0.0108, dec (Reduced to Full) = 0.3236, add (DA)= 0.0001decode = 0.3345 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5928 s, inc stats = 0.5961, 
+minCostFunction = 0.2221 s, v_trunc (Latent to Reduced) = 0.0009, dec (Reduced to Full) = 0.2280, add (DA)= 0.0001decode = 0.2290 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4512 s, inc stats = 0.4544, 
+minCostFunction = 0.1832 s, v_trunc (Latent to Reduced) = 0.0021, dec (Reduced to Full) = 0.2584, add (DA)= 0.0001decode = 0.2606 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4439 s, inc stats = 0.4471, 
+minCostFunction = 0.2366 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.2158, add (DA)= 0.0000decode = 0.2169 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4536 s, inc stats = 0.4568, 
+minCostFunction = 0.2338 s, v_trunc (Latent to Reduced) = 0.0021, dec (Reduced to Full) = 0.3619, add (DA)= 0.0001decode = 0.3641 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5980 s, inc stats = 0.6012, 
+minCostFunction = 0.3607 s, v_trunc (Latent to Reduced) = 0.0020, dec (Reduced to Full) = 0.2222, add (DA)= 0.0001decode = 0.2243 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5850 s, inc stats = 0.5890, 
+minCostFunction = 0.2405 s, v_trunc (Latent to Reduced) = 0.0021, dec (Reduced to Full) = 0.1944, add (DA)= 0.0001decode = 0.1965 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4371 s, inc stats = 0.4411, 
+minCostFunction = 0.3731 s, v_trunc (Latent to Reduced) = 0.0086, dec (Reduced to Full) = 0.2188, add (DA)= 0.0000decode = 0.2275 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6006 s, inc stats = 0.6046, 
+minCostFunction = 0.3615 s, v_trunc (Latent to Reduced) = 0.0058, dec (Reduced to Full) = 0.2932, add (DA)= 0.0001decode = 0.2991 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6607 s, inc stats = 0.6649, 
+DA - - L2: 1669.58, L1: 1772.27, % Improve: 8.98%, DA_MAE: 0.17, mse_ref: 0.24, mse_DA: 0.224, time(s): 0.8605s,
+\% improve_point: 6.89, mse_ref_points: 2.675471884515577e-05, mse_da_points: 2.4983081244584e-05, % improve_overlap: 4.62, mse_ref_overlap: 0.23053, mse_da_overlap: 0.21930
+minCostFunction = 0.2746 s, v_trunc (Latent to Reduced) = 0.0022, dec (Reduced to Full) = 0.3135, add (DA)= 0.0001decode = 0.3158 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5905 s, inc stats = 0.5938, 
+minCostFunction = 0.1595 s, v_trunc (Latent to Reduced) = 0.0021, dec (Reduced to Full) = 0.4634, add (DA)= 0.0001decode = 0.4656 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6252 s, inc stats = 0.6292, 
+minCostFunction = 0.2768 s, v_trunc (Latent to Reduced) = 0.0118, dec (Reduced to Full) = 0.4460, add (DA)= 0.0001decode = 0.4579 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.7347 s, inc stats = 0.7387, 
+minCostFunction = 0.3942 s, v_trunc (Latent to Reduced) = 0.0010, dec (Reduced to Full) = 0.4242, add (DA)= 0.0001decode = 0.4253 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.8196 s, inc stats = 0.8236, 
+minCostFunction = 0.2874 s, v_trunc (Latent to Reduced) = 0.0032, dec (Reduced to Full) = 0.3213, add (DA)= 0.0001decode = 0.3246 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6121 s, inc stats = 0.6163, 
+minCostFunction = 0.2995 s, v_trunc (Latent to Reduced) = 0.0067, dec (Reduced to Full) = 0.2885, add (DA)= 0.0001decode = 0.2953 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5949 s, inc stats = 0.5990, 
+minCostFunction = 0.2626 s, v_trunc (Latent to Reduced) = 0.0022, dec (Reduced to Full) = 0.2842, add (DA)= 0.0000decode = 0.2864 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5491 s, inc stats = 0.5532, 
+minCostFunction = 0.2960 s, v_trunc (Latent to Reduced) = 0.0022, dec (Reduced to Full) = 0.2832, add (DA)= 0.0000decode = 0.2854 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5815 s, inc stats = 0.5857, 
+minCostFunction = 0.2370 s, v_trunc (Latent to Reduced) = 0.0020, dec (Reduced to Full) = 0.1865, add (DA)= 0.0001decode = 0.1886 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4257 s, inc stats = 0.4297, 
+minCostFunction = 0.2137 s, v_trunc (Latent to Reduced) = 0.0066, dec (Reduced to Full) = 0.2245, add (DA)= 0.0001decode = 0.2312 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.4451 s, inc stats = 0.4492, 
+DA - - L2: 1826.63, L1: 1861.03, % Improve: 8.78%, DA_MAE: 0.17, mse_ref: 0.25, mse_DA: 0.232, time(s): 0.8352s,
+\% improve_point: 6.52, mse_ref_points: 2.7585142189453965e-05, mse_da_points: 2.587885740368489e-05, % improve_overlap: 3.99, mse_ref_overlap: 0.23812, mse_da_overlap: 0.22853
+minCostFunction = 0.1197 s, v_trunc (Latent to Reduced) = 0.0066, dec (Reduced to Full) = 0.1361, add (DA)= 0.0001decode = 0.1428 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.2626 s, inc stats = 0.2658, 
+minCostFunction = 0.3295 s, v_trunc (Latent to Reduced) = 0.0135, dec (Reduced to Full) = 0.1689, add (DA)= 0.0001decode = 0.1825 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5120 s, inc stats = 0.5153, 
+minCostFunction = 0.2088 s, v_trunc (Latent to Reduced) = 0.0083, dec (Reduced to Full) = 0.3224, add (DA)= 0.0001decode = 0.3308 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.5396 s, inc stats = 0.5438, 
+minCostFunction = 0.1531 s, v_trunc (Latent to Reduced) = 0.0047, dec (Reduced to Full) = 0.1450, add (DA)= 0.0001decode = 0.1499 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.3030 s, inc stats = 0.3066, 
+minCostFunction = 0.3151 s, v_trunc (Latent to Reduced) = 0.0090, dec (Reduced to Full) = 0.4743, add (DA)= 0.0001decode = 0.4834 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.7986 s, inc stats = 0.8018, 
+minCostFunction = 0.1809 s, v_trunc (Latent to Reduced) = 0.0051, dec (Reduced to Full) = 0.4612, add (DA)= 0.0001decode = 0.4664 s, unnorm = 0.0001 s, TOTAL = unnormalising + decoding + minimising = 0.6474 s, inc stats = 0.6512, 
+DA - - L2: 1921.92, L1: 1909.59, % Improve: 8.67%, DA_MAE: 0.17, mse_ref: 0.25, mse_DA: 0.235, time(s): 0.8173s,
+\% improve_point: 6.38, mse_ref_points: 2.7965246871915533e-05, mse_da_points: 2.6277171051227313e-05, % improve_overlap: 3.77, mse_ref_overlap: 0.24141, mse_da_overlap: 0.23233
+Results of DA at 2020-08-26 15:21:05.549769. 
+      percent_improvement  ref_MAE_mean  ...       time  time_online
+0              10.041320      0.142254  ...  14.998890     0.550627
+1              10.113290      0.142248  ...   0.616584     0.610287
+2              10.151234      0.142426  ...   0.309233     0.303185
+3              10.230454      0.142762  ...   0.382113     0.376545
+4              10.286404      0.143154  ...   0.684220     0.677320
+..                   ...           ...  ...        ...          ...
+102             6.899332      0.218702  ...   0.518198     0.512004
+103             6.884004      0.219106  ...   0.546527     0.539629
+104             6.875007      0.219457  ...   0.308703     0.302985
+105             6.872059      0.219678  ...   0.804785     0.798588
+106             6.878577      0.219736  ...   0.654380     0.647388
+
+[107 rows x 20 columns]
+data fp  /home/mredstone/unstructuredCAE/data/subdomain_6/
+domain, other, pickle, dim 6 ['8'] /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/ 1
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/X_40_1D_clustered.pickle
+Shape read X:  (537, 26032)
+Clustering in 1D
+| Header             | Info                                                                         |
+|--------------------+------------------------------------------------------------------------------|
+| Experiment title   | Idx_40P_150E_1D2L                                                            |
+| Home dir           | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/         |
+| Results dir        | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/results/ |
+| Data fp            | /home/mredstone/unstructuredCAE/data/subdomain_6/                            |
+| Pickled data fp    | /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/     |
+| Field name         | TracerGeorge                                                                 |
+| Using Loader       | <class 'VarDACAE.UnstructuredMesh.DataLoaderUnstructuredMesh.DataLoaderUnstructuredMesh'>     |
+| Compression Method | AE                                                                           |
+| Percentage         | 40                                                                           |
+| Seed               | 42                                                                           |
+| 3D                 | False                                                                        |
+| 2D                 | False                                                                        |
+| 1D                 | True                                                                         |
+Initialising model of type  <class 'VarDACAE.AEs.AE_general.GenCAE'>
+Dim set in GenCAE:  1
+block is  Tucodec1D  and layer_kwargs is  {'B': 'NeXt1D', 'Cstd': 64, 'S': None, 'A': 'prelu', 'AS': None, 'DIM': 1, 'clusterInputSize': 26032, 'encode': True}
+When creating TucodecEncode1D in build, inputSize =  26032
+DIM USED  1
+When creating TucodecEncode1D, inputSize =  26032 with Cstd =  64
+Dim set in GenCAE:  1
+block is  Tucodec1D  and layer_kwargs is  {'B': 'NeXt1D', 'Cstd': 64, 'S': None, 'A': 'prelu', 'AS': None, 'DIM': 1, 'clusterInputSize': 26032, 'encode': False}
+When creating TucodecEncode1D in build, inputSize =  26032
+DIM USED  1
+Number of parameters: 27513777
+------------------------------ Training subdomain 6 at 2020-08-26 15:21:19.508118. ------------------------------
+Loading data started 2020-08-26 15:21:19.508244
+Reading pickle file:  /home/mredstone/unstructuredCAE/code/Data_Assimilation/src/VarDACAE/X_6/X_40_1D_clustered.pickle
+Shape read X:  (537, 26032)
+Clustering in 1D
+shape of mean (26032,) and std (26032,)
+Train from 0 to 429 - test from 429 to 536 and t_DA at 536
+test_X type:  <class 'numpy.ndarray'>
+test X shape 0 =  8  and batch  3
+Train loader data <torch.utils.data.dataloader.DataLoader object at 0x7fb9f04b6c88>
+Loading data finished 2020-08-26 15:21:40.203133
+Loop AE Train begins at  15:21:40.209269
+Training epoch begins:  0
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+epoch [1/150], TRAIN: -loss:10687.12, av_diff: 0.32, time taken (m): 0.06m
+epoch [1/150], TEST: -loss:99186.2344, time taken(m): 0.02m
+Training epoch begins:  1
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  2
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  3
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  4
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  5
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+epoch [6/150], TRAIN: -loss:3899.27, av_diff: 0.02, time taken (m): 0.06m
+Training epoch begins:  6
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  7
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  8
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  9
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  10
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+epoch [11/150], TRAIN: -loss:2187.75, av_diff: 0.00, time taken (m): 0.05m
+epoch [11/150], TEST: -loss:98665.2998, time taken(m): 0.02m
+Training epoch begins:  11
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  12
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  13
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  14
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  15
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+epoch [16/150], TRAIN: -loss:1774.58, av_diff: 0.00, time taken (m): 0.05m
+Training epoch begins:  16
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  17
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  18
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  19
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+Training epoch begins:  20
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([3, 26032])
+data shape in one loop:  torch.Size([2, 26032])
+epoch [21/150], TRAIN: -loss:1429.07, av_diff: 0.00, time taken (m): 0.06m
+epoch [21/150], TEST: -loss:98532.5513, time taken(m): 0.02m
+Traceback (most recent call last):
+  File "/home/mredstone/.local/lib/python3.6/site-packages/torch/serialization.py", line 364, in save
+    _save(obj, opened_zipfile, pickle_module, pic
