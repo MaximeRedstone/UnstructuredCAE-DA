@@ -1,0 +1,571 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage[sorting=none, backend=biber, maxbibnames=99]{biblatex}
+
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{ltablex}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage[british]{babel}
+\usepackage{csquotes}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{diagbox}
+
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+
+\captionsetup{justification=justified}
+\usepackage{subfigure}
+\usepackage{subcaption}
+
+\usepackage{titlesec}
+
+\usepackage{url}
+
+\setcounter{secnumdepth}{4}
+
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-\do:}
+\usepackage{breakurl}
+\usepackage[breaklinks]{hyperref}
+
+\newcommand{\source}[1]{\caption*{\hfill Source: {#1}} }
+
+\pagestyle{fancyplain}
+\fancyhf{}
+
+\rhead{\fancyplain{}{\today}}
+\cfoot{\fancyplain{}{\thepage}}
+
+\title{Unstructured Convolutional Autoencoders for Big Data Assimilation \\\Large{--- Background \& Progress Report ---}}
+\author{Maxime Redstone Leclerc \\\
+        mbr19@imperial.ac.uk\\ \\
+       \medium{Supervisor: Dr. Rossella Arcucci}\\
+       \medium{MSc Computing Science Individual Project - Imperial College London}}
+
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%% ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+    Data Assimilation (DA) provides a framework to incorporate observations into forecasting models thereby improving predictions. Many attempts have been made to improve the efficiency and accuracy of this process. Techniques such as Principal Component Analysis (PCA) or Truncated Singular Value Decomposition (TSVD) have been used to reduce the space. However, this de facto entails a loss of information. Fluidity, the state-of-the-art Computational Fluid Dynamics (CFD) software, has a adaptive mesh capability and renders unstructured meshes. This work focuses on applying deep learning techniques and particularly Autoencoders (AEs) on unstructured meshes to reduce the space without any loss of information for a Big Data problem. Testing experiments will be conducted using pollution tracers from a London area.
+\end{abstract}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+Climate change and air pollution are amongst the most pressing challenges to date. Outdoor air pollution will result in four-million deaths per year by 2050 according to current estimates \cite{2050airpollution}. This represents over ten times the number of deaths from COVID-19 as of June 2020 \cite{covid19deaths}. A deeper understanding of air flows and pollution transport at pedestrian level (i.e. at micro-scale) is crucial to guarantee the development of sustainable cities in the future.
+
+Modelling is extensively used to obtain accurate predictions of dynamical systems. However forecasts from models continuously diverge from reality as time progresses \cite{DAmathematicalconcepts}. Data Assimilation (DA) is a technique used to integrate information provided by environmental observations into a forecasting model. DA has been used in many field and improving the predictions in weather forecasting, air pollution and oceanography for instance is of the upmost importance in light of the climate crisis. 
+
+Alongside the immense potential of having more data available comes the difficulty to efficiently analyse and use that information in a Big Data problem. Indeed, within the Data Assimilation process, techniques such as Principal Component Analysis (PCA), Truncated Singular Value Decomposition (TSVD) or Tikhonov regularization are used to make the DA process computable \cite{optreducedspace} \cite{sensitivityAnalysis} \cite{ECMWF_II}. However, these techniques involve an inevitable loss of information \cite{cacuci2013}. Autoencoders (AEs) are a powerful technique that have been used to reduce the space in DA but require structured meshes \cite{julian}. This involves interpolation which in turn introduces errors.
+
+This project makes the following novel contributions:
+
+\begin{itemize}
+    \item Adapts AEs to unstructured meshes in a DA process.
+    \item Uses AEs to conduct DA as part of a Big Data problem.
+\end{itemize}
+
+This project is conducted as part of the \textit{'Managing Air for Green Inner Cities'} (MAGIC) project which aims at finding \textit{'a cost-beneficial method in which to change the way our cities are developing'} and the \textit{'Health assessment across biological length scales for personal pollution exposure and its mitigation'} (INHALE) project that studies the impact of air pollution on health. This work builds upon previous contributions to the MAGIC project \cite{julian} \cite{tolga}. More specifically, the aim is to concentrate on the most relevant sub-domains identified in \cite{tolga} (i.e. those that contain the most relevant information) and adapt the AEs used on structured meshes in \cite{julian} as the starting point for this project.
+
+The methodology will be tested on data obtained from the MAGIC test site (a 500m radius circle around St George's Circus in South London, UK). This data represents a high resolution map of the air flows and pollution concentrations obtained using Fluidity (\url{http://fluidityproject.github.io/}), the state-of-the-art computational fluids dynamics (CFD) software.
+
+Section \ref{section:background} of this report addresses the background information required to understand the technologies that will be implemented in this project. More specifically, the concept of Data Assimilation will be explained followed by a description of Autoencoders and finally unstructured meshes. Section \ref{section:progress} explains the work achieved to date as well as the future timeline of the project.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%% BACKGROUND SECTION %%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background information}
+\label{section:background}
+
+%%%%%%%%%%%%%%%%%%%%%%%% DA %%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Data Assimilation}
+\label{subsection:DA}
+
+\subsubsection{Related Works}
+\label{subsubsection:relatedworks}
+
+Data Assimilation (DA) has been in use for the past forty years and applied to multiple fields. It was first used for numerical weather prediction (NWP) \cite{lorenc} \cite{ecmwf} \cite{MET4DVarDA} but has now been applied to planetary climate \cite{mars}, oceanography \cite{oceanography}, biology \cite{biology} and urban pollution modelling \cite{optreducedspace} (in the context of the MAGIC project).
+
+DA couples forecasting models with newly available observations made over time to provide a 'most accurate estimate' of the current state of the system, the \textit{analysis}. It also quantifies the uncertainty of the estimated state of the system. One can distinguish between two basic types of DA \cite{courtier}:
+
+\begin{itemize}
+    \item Sequential assimilation that only considers observation made in the past until the time of analysis, which is the case for real-time assimilation systems.
+    \item Non-sequential assimilation or retrospective assimilation that can also consider observations from the future.
+\end{itemize}
+
+The DA process is computationally challenging. The European Centre for Medium-Range Weather Forecasts (ECMWF) uses 25 million observations twice a day to correct the 150 million variables that define the model's virtual atmosphere. This takes as much computer power as the 10-day forecast \cite{ECMWFLecture}. This example shows how the DA problem is underconstrained as fewer observations than model parameters exist. This requires an \textit{a priori} guess: the \textit{background} state. The estimation of errors from the observations and the model must be taken into account to provide the most accurate assimilation scheme \cite{haben}.
+
+Most DA techniques are based on Bayesian probabilistic theories and can be divided into two main strategies \cite{add-da} \cite{Bannister} \cite{courtier}:
+
+\begin{itemize}
+    \item Variational DA (VarDA) is based on minimising a cost function that computes the distance between the observations and the model. The solution is found by evaluating the cost function and its gradient iteratively. This method relies on errors described by error covariance matrices. VarDA regroups 3D-VaR and 4D-VaR. The latter is a generalisation of the former for observations that are distributed in time which makes flow-dependent corrections to the first guess trajectory possible.
+    
+    \item Filtering can take many forms depending on the problem at hand. The most well-known methods involved Kalman Filter (KF), Extended Kalman Filter (EKF), Reduced-Rank Kalman Filter (RRKF), Ensemble Kalman Filters (EnKF) and Particle Filter (PF). KF is based on finding the solution with the minimum variance while EKF extends the KF approach to non-linear systems. RRKF approximates the KF approach for large dimensional systems. EnKF is based on ensemble forecasts which produces multiple analysis. As opposed to standard KF the error covariance matrices are not computed but simply sampled from the forecasts which makes it more scalable. PF models non-linear systems and allows for non-Gaussian probability distribution which is not the case for the previous Kalman methods described \cite{ECMWFLecture}.
+\end{itemize}
+
+In recent years multiple attempts have been made to combine strategies and yield a hybrid approach \cite{NCEPHybrid} \cite{ECMWFHybrid}. Specific factors may influence the use of a particular strategy to solve the problem at hand and some criteria are detailed in \cite{Bannister}.
+
+Sequential VarDA provides a more rapid and robust approach than other statistical implementations to incorporate environmental observations in real time. It has been the basis of most operational implementations of DA in NWP centres such as the Met Office \cite{MET4DVarDA} and the ECMWF \cite{ecmwf}. This is why Section \ref{subsubsection:definitions} introduces the notations and definitions for the VarDA mathematical framework and Section \ref{subsubsection:VarDAFormulation} guides the VarDA formulation and explains where in the DA process the work of this project intervenes.
+
+\subsubsection{DA Definitions and Notations}
+\label{subsubsection:definitions}
+
+The definitions and notations used are based on \cite{Bannister}.
+
+Let $\textbf{x}_t$ represent the state of the model at time $t$ such that:
+
+\begin{equation}
+    \textbf{x}_{t} \in \mathbb{R}^{NP}
+\end{equation}
+
+where NP is the number of elements in the state vector. For T time steps, this yields a single matrix:
+
+\begin{equation}
+    \textbf{X}=\left[\textbf{x}_{0}, \textbf{x}_{1}, \ldots, \textbf{x}_{T}\right] \in \mathbb{R}^{ NP \times T}
+\end{equation}
+
+One can relate the state $\textbf{x}_t$ by propagating $\textbf{x}_{t-1}$ forward by one time step using the non-linear model, $\mathcal{M}_{t-1, t}$.
+
+\begin{equation}
+\mathbf{x}_t=\mathcal{M}_{t-1, t}\left[\mathbf{x}_{t-1}\right]+\eta_t
+\end{equation}
+
+where $\eta_t$ represents the model error introduced over time $t-1 \xrightarrow{} t$. This can result from an inaccurate representation of the physics involved.
+
+Let $\textbf{x}_0^b$ be the background state at time step 0. This contains the \textit{a priori} information mentioned in the previous section. To obtain future background states, the following equation is used:
+
+\begin{equation}
+    \textbf{x}_{t}^{b}=\mathcal{M}_{t-1, t}\left[\textbf{x}_{t-1}^{b}\right]
+\end{equation}
+
+Let $\textbf{y}_t$ represent the observation space of the system at time t such that:
+
+\begin{equation}
+    \textbf{y}_{t} \in \mathbb{R}^{Nobs}
+\end{equation}
+
+where $Nobs << NP$. The mapping from the state of the system to the observations at time t is done via the non-linear observation operator, $\mathcal{H}_{t}$:
+
+\begin{equation}
+\mathbf{y}_t^{o}=\mathcal{H}_t\left[\mathbf{x}_t\right]+\epsilon_o
+\end{equation}
+
+where $\epsilon_o$ and $\mathbf{y}_t^{o}$ represent the observation error and the real observation at time t respectively. The observation error covariance matrix will be noted $\textbf{R}_t$.
+
+Quantifying error will help assess the data assimilation process. We represent the different sources of uncertainty in the background, observations and analysis using probability density functions. 
+
+Let the background error be defined by:
+
+\begin{equation}
+\epsilon_{b}=\mathbf{x}^{b}-\mathbf{x}^{TrueState}
+\end{equation}
+
+yielding a background error covariance matrix $\textbf{B}_t$: 
+
+\begin{equation}
+\textbf{B}_{t}=\left(\textbf{x}_{t}^{b}-\textbf{x}_{t}^{TrueState}\right)\left(\textbf{x}_{t}^{b}-\textbf{x}_{t}^{TrueState}\right)^{T}
+\end{equation}
+
+Table \ref{tab:definitions} summarises the notations used.
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{c|c|c}
+      \textbf{Symbol} & \textbf{Description} & \textbf{Size}\\
+      \hline
+      $\textbf{x}_{t}$ & State vector at time t & NP\\
+      $\textbf{x}_0^b$ & Background state at time 0 & NP\\
+      $\textbf{X}$ & State vector at all times & NP x T\\
+      $\eta_t$ & Model error at time t & NP\\
+      $\textbf{y}_t^o$ & Real observations at time t & Nobs\\
+      $\mathcal{M}_{t-1, t}$ & Non-linear model & NP\\
+      $\mathcal{H}_t$ & Non-linear observation operator at time t & in:NP out:Nobs_t \\
+      $\textbf{B}_t$ & Background error covariance matrix & NP x NP\\
+      $\textbf{R}_t$ & Observation error covariance matrix & Nobs x Nobs\\
+      $\textbf{H}_t$ & Linear observation operator at time t & Nobs$_t$ x NP\\
+      $\textbf{d}_t$ & Misfit & Nobs$_t$\\
+    \end{tabular}
+    \caption{Notations summary where NP is the number of points, Nobs the total number of observations (Nobs$_t$ is the observations at time t) and T the number of time steps.}
+    \label{tab:definitions}
+  \end{center}
+\end{table}
+
+\subsubsection{VarDA Formulation}
+\label{subsubsection:VarDAFormulation}
+
+VarDA consists in minimizing a cost function in order to get the most accurate representation of the system given the available observations $\textbf{y}^o$, the physics described in the forecast model, $\mathcal{M}_{t-1, t}$ and the uncertainties. The problem requires to find the state $\textbf{x}$ for which the following equation holds \cite{Bannister}:
+
+\begin{equation}
+\textbf{x}^{DA}=\underset{\textbf{x}}{\arg \min } J\left(\textbf{x}\right)
+\end{equation}
+
+where $J(\textbf{x})$ is given by:
+
+\begin{equation}
+\begin{aligned}
+J\left(\textbf{x}\right)=\alpha\left\|\textbf{x}-\textbf{x}^{b}\right\|_{\textbf{B}_{0}^{-1}}^{2}+\alpha \sum_{t=0}^{T}\left\|\textbf{y}_{t}^o-\mathcal{H }_{t}\left[\textbf{x}_{t}\right]\right\|_{\textbf{R}_{t}^{-1}}^{2} +\alpha\sum_{t=1}^{T}\left\|\textbf{x}_{t}-\textbf{M}_{t-1, t}\left[\textbf{x}_{t-1}\right]\right\|_{Q_{t}^{-1}}^{2}
+\end{aligned}
+\label{eq:costFct}
+\end{equation}
+
+where $\alpha$ is a regularization parameter. Using $\alpha = 1$ can be interpreted as weighting the observations and the background state in a similar way \cite{regularizationParam}. In equation \ref{eq:costFct}, $
+\|\mathbf{a}\|_{\mathbf{A}^{-1}}^{2} \equiv \mathbf{a}^{\mathrm{T}} \mathbf{A}^{-1} \mathbf{a}$
+
+This cost function contains three terms:
+
+\begin{itemize}
+    \item First term, $\textbf{J}_b$, represents the background term. This calculates the discrepancy between the initial guess, $\textbf{x}^b$ and the system's state after the DA phase.
+    \item Second term, $\textbf{J}_o$, represents the observation term. This calculates the discrepancy between the actual observations and the predicted state of the system according to the model.
+    \item Third term, $\textbf{J}_q$, represents the model error term. This calculates the discrepancy between any two model predictions $t$ and $t-1$.
+\end{itemize}
+
+This formulation is the most general VarDA approach and is known as 4D-Var. It uses both three dimensions of space and one dimension of time. In practice, the computation of the above equation is not doable and additional approximations are required. 
+
+\paragraph{Incremental VarDA}
+\label{subsubsubsection:IncrementalVarDA}
+
+An incremental VarDA formulation has been developed to deal with non-linear observation operator and/or models to still minimise the cost function. This involves updating the reference state with a perturbation \cite{courtierIncremental}.
+
+\begin{equation}
+\mathbf{x}_t=\mathbf{x}^{\mathrm{b}}_t+\delta \mathbf{x}_t
+\end{equation}
+
+Under the following assumptions \cite{Bannister}:
+
+\begin{itemize}
+    \item \textit{Strong-constraint} 4D-VAR: this assumes the model is perfect so that the state of the system, $\textbf{x}$, is fully determined by the initial condition, $\textbf{x}_0$. Under this assumption, the third term, $\textbf{J}_q$ can be discarded and therefore
+    only the state at time step 0 is used to determine all the subsequent states.
+    \item 4D-Var to 3D-Var: this excludes the time dimension and therefore assumes $\textbf{M}_{t_1, t_2} = \textbf{I}$  $\forall t_1, t_2$.
+\end{itemize}
+
+linearising the problem around the background state yields \cite{optreducedspace}:
+
+\begin{equation}
+\delta \boldsymbol{x}_0^{D A}=\underset{\delta \boldsymbol{x}_0}{\arg \min } J(\delta \boldsymbol{x}_0)
+\end{equation}
+
+\begin{equation}
+J(\delta \mathbf{x}_0^{DA})=\alpha\|\delta \mathbf{x}_0\|_{\mathrm{B}_{0}^{-1}}^{2}+\alpha \sum_{t=0}^{T}\left\|\delta \mathbf{d}_{t}\right\|_{\mathrm{R}_{t}^{-1}}^{2}
+\label{eq:3DVarCostFct}
+\end{equation}
+
+where $\textbf{d}$ is the misfit and is defined by:
+
+\begin{equation}
+\boldsymbol{d}_t=\boldsymbol{y}_t^o-\boldsymbol{H}_t \boldsymbol{x}_t^{b}
+\end{equation}
+
+and the increment by: 
+
+\begin{equation}
+        \delta \textbf{d}_t = \textbf{d}_t - \textbf{H}_t \delta \textbf{x}    
+\end{equation}
+
+where $\textbf{\MakeUppercase{h}}_t$ is the linearised observation operation.
+
+\paragraph{Control Variable Transform}
+\label{subsubsubsection:CVT}
+
+As can be seen in Equation \ref{eq:3DVarCostFct}, calculating $\textbf{J}(\delta \textbf{x}_0^{DA})$ involves knowing the matrices $\textbf{B}_0$ and $\textbf{R}_t$ explicitely. The Control Variable Transform (CVT) method defines the cost function in terms of \textit{control variables} which yields an error covariance matrix of $\textbf{I}$ and makes the calculation computable \cite{Lorenc1997}. A schematic representation of the transformation is showed in Figure \ref{fig:CVTTransform} (adapted from \cite{Bannister2008}). 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/CVT_Fig.png}
+    \caption{Representation of CVT and impact on covariance matrices. Background error covariance matrix in model variables (left) and control variables (right). Shaded matrix elements represent non-zero elements.}
+    \label{fig:CVTTransform}
+\end{figure}
+
+
+This is done by letting $\textbf{B}_0 = \textbf{V}\textbf{V}^T$ as this implies $\textbf{V}^T\textbf{B}_0^{-1}\textbf{V} = \textbf{I}$. This way we get:
+
+\begin{equation}
+\mathbf{\mathcal{X}}^{D A}=\underset{\mathbf{\mathcal{X}}}{\arg \min } J(\mathbf{\mathbf{\mathcal{X}}})
+\end{equation}
+
+\begin{equation}
+J(\mathbf{\mathcal{X}})=\frac{1}{2} \alpha \mathbf{\mathcal{X}}^{T} \mathbf{\mathcal{X}}+\frac{1}{2} \alpha \|\mathbf{d}-\mathbf{H} \mathbf{V}\mathbf{\mathcal{X}}\|_{R_t^{-1}}^{2}
+\label{eq:CVTcost}
+\end{equation}
+
+where $\mathbf{\mathcal{X}}= \textbf{V}^{+} \delta \textbf{x}$ and $\textbf{V}^{+}$ is the generalised inverse of $\textbf{V}$ \cite{optreducedspace}. In most cases, the observation error covariance matrix $\textbf{R}_t$ is diagonal. This is because there is no reason to assume observation error correlations between independent sensors.
+
+This general formulation of the 3D-Var approach is still ill-conditioned and requires preconditioning.
+
+\paragraph{Minimisation and Preconditioning}
+\label{subsubsubsection:MinimisationCostFct}
+
+The minimization procedure can be done with a variety of techniques such as Gradient descent, Newton and \textit{Quasi-Newton} methods or Limited-Broyden Fletcher Goldfarb Shanno (L-BFGS). The later was used in the past \cite{optreducedspace} and is considered the fastest for large scale optimisation problems \cite{LBFGSFastest}. However, the convergence rate of L-BFGS depends on the conditioning of the numerical problem and therefore on the condition number of the Hessian of  $J(\mathbf{\mathcal{X}})$ which in turns depends on the condition number of \textbf{V}. 
+
+To precondition \textbf{V}, a variety of methods have been used including PCA, TSVD
+and Tikhonov regularization \cite{optreducedspace} \cite{ECMWF_II} \cite{sensitivityAnalysis}, all of which involve a lost of information. \textbf{This} is the step of the DA process this project will focus on.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%% AEs %%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Deep Learning: Autoencoders}
+\label{subsection:autoencoders}
+
+This project builds upon the work done in \cite{julian} and uses it as a starting point for the development of our methodology. It is based on Autoencoders (AEs). AEs are an unsupervised machine learning method that contain three parts as shown in Figure \ref{fig:AEOverview}:
+
+\begin{itemize}
+    \item An Encoder which takes an input, $\textbf{x}$, and translates it to a reduced space representation, called the \textit{code}, $\textbf{h}$.
+    \item A Decoder which translates the code, $\textbf{h}$, back into a reconstruction of the input, $\textbf{r}$.
+    \item Loss function, $\mathcal{L}$, to compute the discrepancy between the final reconstruction and the original input. The goal being to minimize this discrepancy to yield the most accurate compression-decompression method.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/AEImage.png}
+    \caption{Overview of an autoencoder design \cite{vertat}.}
+    \label{fig:AEOverview}
+\end{figure}
+
+There exists multiple variations of the standard, or often called vanilla, AEs such as regularized AEs, sparse AEs, denoising AEs, variational AEs (VAEs) and their precise definitions are detailed in \cite{Goodfellow2016}. This technology has been used across multiple fields to reduce the dimensionality of the problems at hand. 
+
+In \textbf{Geometry Processing}, a combination of VAEs and Convolutional AEs (CAEs) have been studied \cite{ranjan2018generating} \cite{mesh-basedAEsDeformation} \cite{yuan2019mesh} \cite{VAEDeforming3DMesh} and prove to yield better results than techniques such as Principal Component Analysis (PCA). In these applications the reduction of the space can be used to represent the deformation of 3D shapes for example.
+
+In \textbf{Reduced Order Modelling} (ROM), the complex forecast model (i.e. Fluidity for example) can be replaced with a less complex model using AEs. As during a 4D-DA scheme the model is used at each step of the DA process, this translates to a much more efficient way to perform DA. In particular when compared to ROM conducted with PCA as in \cite{WangAEsROM} \cite{LohAEsROM} \cite{BukkaAEsROM}. 
+
+Moreover, in many applications, the problem deals with non-linear patterns which AEs are able to model, which is not the case of PCA techniques that can only create modes that are linear combinations of the inputs \cite{Deng2017}. By ensuring the code $\textbf{h}$ of the AE has a smaller dimension than the input $\textbf{x}$, AEs are able to focus on the most relevant features in the data \cite{Goodfellow2016}. AEs have been used in \cite{julian} as part of the DA process and again provided better results than when PCA was used such as in \cite{DimitriuG} \cite{ROMto4DVARPOD}. This motivates the use of AEs in DA.
+
+\subsubsection{Autoencoders in Data Assimilation}
+\label{subsubsection:AEsForDA}
+
+In the context of DA, AEs have been used to produce ROM. The works described in \cite{WangAEsROM} \cite{gonzalez2018deep} make use of these deep learning tools to improve the robustness of their model's predictions. It is important to note that using these techniques involves a training process which can be time consuming as stated in \cite{WangAEsROM}.
+
+AEs have also been used to reduce the space of the DA process in the case of the 3D-VarDA. The author in \cite{julian} used CAE to conduct the DA in a \textit{bi-reduced space} which improved both the efficiency and accuracy of the process. \textit{Bi-reduced} refers to the fact that the space is first reduced using the Control Variable Technique (CVT) and then using AEs. They proved autoencoders can produce better results than TSVD and PCA to reduce the space while still preconditioning V. Their 3D-VarDA formulation is given by:
+
+\begin{equation}
+    \mathbf{w}_{l}^{D A}=\underset{\mathbf{w}_{1}}{\arg \min } J\left(\mathbf{w}_{l}\right)
+\end{equation}
+
+\begin{equation}
+    J\left(\mathbf{w}_{l}\right)=\frac{1}{2} \mathbf{w}_{l}^{T} \mathbf{w}_{l}+\frac{1}{2}\left\|\mathbf{d}_{l}-V_{l} \mathbf{w}_{l}\right\|_{R_{l}^{-1}}^{2}
+\end{equation}
+
+where $V_l$, $\textbf{d}_l$ and $\textbf{w}_l$ represent $V$, $\textbf{d}$ and $\textbf{w}$ in the latent space (i.e. the one produced by the AEs) respectively. 
+
+
+In the literature, various designs for these deep learning techniques are used. Indeed, many parameters come into play such as the number of layers, the number of nodes per layer, the activation functions (Sigmoid, ReLU, PReLU) and the loss function used (Mean Squared Error (MSE), Binary Cross Entropy (BCE)). Better dimensionality reduction has been achieved experimentally using deep autoencoders (multiple layers) \cite{hinton2006reducing}. As opposed to more simplistic designs, \cite{julian} used state-of-the-art components to create the proposed CAE architecture such as complex residual blocks and attention mechanisms that proved a gain in efficiency using the MAGIC test case. Additionally, the models are readily available via an open-source API on github at: \url{https://github.com/julianmack/Data\_Assimilation} under the MIT license. This is why \cite{julian} is taken as the starting point for this project. A succinct description of the models' components is given below for completeness.
+
+\subsubsection{A State-of-the-art Architecture}
+\label{subsubsection:stateOfTheArtArchitecture}
+
+\textbf{Convolution Neural Network} (CCN).
+Although fully-connected AEs have been use to reduce dimensions, they suffer from the \textit{curse of dimensionality} which can yield to $10^9$ degrees of freedom. This means that applying large datasets to fully-connected AEs is a) computationally non-viable and b) does not exploit the structure of features in high-dimensional space \cite{gonzalez2018deep}.
+
+CNN on the other hand provide a) local connections and b) shared weights. Weight sharing across the local input allows for detection of location-invariant features (\cite{Goodfellow2016} Chapter 9). CCN are based on the \textbf{convolution} operation which relates the input, $\textbf{x}$, the kernel, $\textbf{w}$, and the feature map, $\textbf{s(t)}$ as shown below:
+
+\begin{equation}
+    s(t)=(x * w)(t)=\sum_{a=-\infty}^{\infty} x(a) w(t-a)
+    \label{eq:convolution}
+\end{equation}
+
+which can be extended to more than 1D. The dimension of the feature map can be reduced using \textit{pooling layers} in which a single value is computed from a $n \times m$ filter using the maximum value as shown in Figure \ref{fig:maxpooling} or the average. In a network, these features maps are obtained one after the other yielding a sequence of feature maps and can be coupled with pooling operations to yield a more complex architecture as shown in Figure \ref{fig:CCNArch}. The decoder has a mirrored architecture of the encoder with transposed-convolution layers or sometimes called deconvolution layers. This ensures the encoder and the decoder are both equally accurate when properly trained.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.9\textwidth]{images/maxpooling.png}
+    \caption{Max pooling operation to reduce the space \cite{maxpooling}.}
+    \label{fig:maxpooling}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.9\textwidth]{images/CCN_1.png}
+    \caption{Example of a Convolutional Neural Network with multiple operations used in the case of classification \cite{cenggoro}.}
+    \label{fig:CCNArch}
+\end{figure}
+
+\textbf{Activation functions}.
+Activation functions insert non-linearity in the network. Multiple types of activation functions exist and have an impact on the performance of the AEs.  \cite{julian} investigated the performance of the most common activation functions and concluded that PReLU obtained better performances in the majority of cases during their search for an optimal CAE architecture. PRELU is defined by:
+
+\begin{equation}
+    f\left(x\right)=\left\{\begin{array}{ll}
+    x, & \text { if } x>0 \\
+    a x, & \text { if } x \leq 0
+    \end{array}\right.
+\end{equation}
+
+where $a$ is a learnable parameter. The work in \cite{he2015delving} demonstrated PReLUs yielded better results than human performance on image classification.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/CCNAttention.png}
+    \caption{Use of attention mechanism inside a CNN architecture \cite{yin2015abcnn}.}
+    \label{fig:attention}
+\end{figure}
+
+\textbf{Complex Residual Blocks}. Densely Connected Blocks and Convolutional Block Attention Modules (CBAMs) were investigated. The former ensures any feature computed by earlier residual blocks in the network is available to all the subsequent residual blocks. CBAMs exploit channel-wise and spatial attention sequentially. This makes use of an Attention mechanism that forces the network to look at relevant features on the feature map. Indeed, even if CCN exploit local correlation in the data, they assign equal importance all features. Figure \ref{fig:attention} shows how an attention feature map can be introduced in a CNN architecture (before or after a convolutional feature map) and was investigated in \cite{yin2015abcnn}.
+
+\textbf{CCN and meshes}. As Convolutional Autoencoders take equally spaced adjacent states as inputs, the author of \cite{julian} interpolated between points which meant the AEs were applied to a structured mesh. This was followed by an up-sampling procedure. The next section explores the potential to apply AEs to unstructured meshes.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%% Adaptive Mesh %%%%%%%%%%%%%%%%%%%%%%%%
+\section{Unstructured Convolutional Autoencoders for Big Data Assimilation}
+
+This project is based on the idea to use AEs on unstructured mesh to reduce the space in a DA process of a Big Data problem. In this Section we explain the main points of our approach.
+
+\subsection{Unstructured Mesh and Convolutional Autoencoders}
+
+\subsubsection{Fluidity}
+\label{subsubsection:fluidity}
+
+The model used in this case is Fluidity. Fluidity is a state-of-the-art 3D non-hydrostatic fluid model where the physics behind the model is computed using control volume finite element discretisation methods. It features a mesh-adaptivity capability on unstructured meshes \cite{PAIN20013771}. This means Fluidity is able to modify the accuracy of the solution within certain sensitive regions. Where small-scale physical events take place, the software will be able to provide a higher resolution solution while keeping a coarsed mesh elsewhere. Where high resolution is achieved (i.e. around the observation points), the representative errors of observations is reduced. Additionally, this provides a better picture of developing air flows whose positions are not always known a priori. Fluidity makes use of 3D space and time adaptive meshes which ensures highly active regions and precise locations of interest can be modelled accurately \cite{du2016ensemble}. A visualisation is provided in Figure \ref{fig:fluidityadaptivity}. This also provides a better efficiency as it reduces the total computation time \cite{add-da}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/subdomains6_8_fluidityAdaptivity.png}
+    \caption{Sub-domains 6 and 8 with surface mesh illustrating Fluidity's mesh adaptivity feature.}
+    \label{fig:fluidityadaptivity}
+\end{figure}
+
+\subsubsection{Adaptive Mesh and CCN}
+\label{subsubsection:adaptiveCAE}
+
+The unstructured mesh output by Fluidity cannot be fed into the CAE that takes grid-like structure inputs. In \cite{julian}, their approach consisted in interpolating between the points which introduces an error and up-sampling the data. A more generic approach would involve taking advantage of the unstructured mesh and adapting the mesh to the convolutional layers of the AE. The generalization of CNNs to meshes is not trivial but has been done for 3D face representation \cite{ranjan2018generating} that based their work on preliminary results by \cite{defferrard:CCNgraphs} \cite{bruna:spectral} \cite{bronstein:beyondeuclidian}. They propose a Convolutional Mesh Autoencoder (CoMA) that takes advantage of novel mesh sampling techniques. More specifically, mesh down-sampling and up-sampling layers were introduced using fast localized convolutional filters defined on the mesh. The authors concluded that their AE performed better than PCA while containing fewer parameters. It is stated that their \textit{'representation models variations on the mesh surface using a hierarchical multi-scale approach and can generalize to other 3D mesh processing applications'}. As opposed to other works that adapted convolutions to meshes \cite{sinha2016deep} \cite{yi2017syncspeccnn} \cite{maron2017convolutional}, the authors of \cite{ranjan2018generating} combined mesh convolutions with efficient operators to achieve a reduced dimensional space.
+
+More recently the authors of \cite{yuan2019mesh} improved the technique devised in \cite{ranjan2018generating} and demonstrated better accuracy by implementing a pooling operations that makes use of the local mesh information. 
+
+This project will investigate the use of such a mesh adapted CAE to further reduce the space following the CVT procedure in DA for unstructured meshes. A summary of the improved procedure of \cite{yuan2019mesh} is detailed in the next section.
+
+\subsubsection{Unstructured Mesh Dimensionality Reduction}
+\label{subsubsection:meshoperators}
+
+Mesh Simplification is achieved based on the method devised in \cite{garland1997surface} which binds together repeating edges based on \textit{quadric matrices}. That method is slightly modified in \cite{yuan2019mesh} as the authors also take into account the edge length in their calculations. The total error is now defined as:
+
+\begin{equation}
+    \begin{aligned} E =\overline{\mathbf{v}}_{k}^{\mathrm{T}} \overline{\mathbf{Q}}_{k} \overline{\mathbf{v}}_{k} +\lambda \max \left\{L_{k m}, L_{k n} | m \in \mathcal{N}_{i}, n \in \mathcal{N}_{j}, m \neq j, n \neq i\right\} \end{aligned}
+\end{equation}
+
+where $\overline{\mathbf{v}}_{k}^{\mathrm{T}} \overline{\mathbf{Q}}_{k} \overline{\mathbf{v}}_{k}$ represents the initial error defined in \cite{garland1997surface} and $L_{k m}$ (resp. $L_{k n}$) is the edge length between vertex k and m (resp. vertex n). $\mathcal{N}_{i}$ (resp. $\mathcal{N}_{j}$) is the set of neighboring vertices of vertex $i$ (resp. $j$). $\lambda$ is simply a weight. 
+
+The pooling operation is defined by contracting two adjacent vertices to a new vertex as shown in Figure \ref{fig:UpDownSampling}.  This vertex (green) is the result of an averaging of the contracted vertices (red) which allows for a preservation of the mesh information.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Vertexcontraction.png}
+    \caption{Pooling operation on meshes \cite{yuan2019mesh}.}
+    \label{fig:UpDownSampling}
+\end{figure}
+
+The lower dimensional mesh can then undergo graph convolution defined by:
+
+\begin{equation}
+    \mathbf{y}=g_{\theta}(\mathbf{L}) \mathbf{x}=\sum_{h=0}^{H-1} \theta_{h} \mathbf{T}_{h}(\tilde{\mathbf{L}}) \mathbf{x}
+\end{equation}
+
+where $\textbf{x}$ and $\textbf{y}$ are the input and output matrices respectively. Each row corresponds to a vertex and each column to a feature dimension. 
+
+This methodology makes use of Chebyshev polynomials, $\mathbf{T}_{h}(\tilde{\mathbf{L}}) \in \mathbb{R}^{V \times V}$,  that allow for faster computation \cite{defferrard:CCNgraphs}. $\theta \in \mathbb{R}^{H}$ is the polynomial coefficients. $\tilde{\mathbf{L}}$ denotes the normalized Laplacian matrix that is an essential operator in spectral graph analysis. In the Fourier basis, it is diagonal and can represent operations such as filtering. $\tilde{\mathbf{L}} = \frac{2\textbf{L}}{\lambda_{max}} - \textbf{I}$.
+
+Their network, composed of a Variational Mesh AE applied to graphs, combined with new pooling and de-pooling operations was trained using mean squared error (MSE) and performed better than state-of-the-art methods. The authors conclude that their network is highly generalizable. This provides an opportunity to explore the use of AEs directly on unstructured meshes in the context of DA.
+
+%%%%%%%%%%%%%%%%%%%%%%%% Big Data Problem %%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Big Data Problem: Domains and Sub-domains}
+\label{subsection:BigDataProblem}
+
+Adaptive Domain Decomposition Data Assimilation (ADD-DA) combines the Domain Decomposition implemented in Fluidity with the DA model in a simple way which reduces the total computation time. The authors of \cite{add-da} demonstrated that it was possible to deal with DA of sub-domains instead of the full domain without any loss of information.
+
+If we let the whole domain be represented by $\mathcal{P}\left(\Omega\right) = \{\Omega_i\}_{i=1,...,s}$ where $\Omega = \{x_j\}_{j=1,...,n}$ are discrete spatial domain obtained using adaptive domain decomposition, the incremental ADD-DA formulation becomes:
+
+\begin{equation}
+    \mathbf{w}_i^{ADD-DA}=\underset{w_i}{\arg \min } J_i(\mathbf{w}_i)
+\end{equation}
+
+\begin{equation}
+\mathbf{w}_i^{ADD-DA} = \underset{w_i}{\arg \min }\left({\frac{1}{2} \alpha \textbf{w}_{i}^{T} \textbf{w}_{i}+\frac{1}{2} \alpha \left(\mathbf{H} \mathbf{V}_{i} \textbf{w}_{i}-\textbf{d}_{i}\right)^{T} \mathbf{R}_{i}^{-1}\left(\mathbf{H} \mathbf{V}_{i} \textbf{w}_{i}-\textbf{d}_{i}\right)}\right)
+\label{eq:increADD-DA}
+\end{equation}
+
+where it can be shown that the second term of equation \ref{eq:increADD-DA} is equivalent to that of equation \ref{eq:CVTcost} using $\|\mathbf{a}\|_{\mathbf{A}^{-1}}^{2} \equiv \mathbf{a}^{\mathrm{T}} \mathbf{A}^{-1} \mathbf{a}$.
+
+
+Now the full domain (Figure \ref{fig:fulldomain0}) is decomposed, we only consider the most relevant sub-domains. More relevant in this case means sub-domains where the pollution measurements were non-zero for all the time steps available. The author of \cite{tolga} proved that for our Test Case (detailed in Section \ref{subsection:testcase}) only sub-domains 6 and 8 are important. An example is shown in Figure \ref{fig:subdomains680} for the tracer \textit{George} at time step 0 compared to the full domain shown in Figure \ref{fig:fulldomain0}. Although these sub-domains (6 and 8) provide the most information, the pollution measurements are very close to zero which leads to a sparse dataset \cite{tolga}.
+
+Our methodology will be tested on each sub-domain independently. If successful, this means a Big Data problem can be addressed using unstructured convolutionl AEs for Data Assimilation by dealing with sub-domains.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/subdomains6_8_timestamp0.png}  
+  \caption{Sub-domains 6 and 8 at time step 0 displaying the data for the \textit{George} tracer.}
+  \label{fig:subdomains680}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/fulldomains_0.png}  
+  \caption{Entire domain at time step 0 displaying the data for the George tracer.}
+  \label{fig:fulldomain0}
+\end{figure}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%% Test Case %%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Test Case}
+\label{subsection:testcase}
+This method will be applied to the data obtained by the MAGIC project. The overall test site represents 14 buildings in an urban environment near London South Bank University (LSBU) in London, UK. The pollution tracers were obtained from sensors placed at the MAGIC test site and computed with the CFD software Fluidity. The domain was decomposed into 10 and 32 sub-domains using Fluidity to allow for parallel execution. The data comprises of 537 time-steps for pollution tracers. These measurements were divided into 9 regions based on location. We will concentrate on the tracer \textit{George} as this was the data used in \cite{tolga} to identify the most relevant sub-domains.
+
+\textbf{Sub-domain 6} represents a domain size of 327 x 460 x 250 (meters) and \textbf{Sub-domain 8} represents a domain size of 806 x 749 x 250 (meters).
+
+The dispersion of the pollution is described by the classic advection-diffusion equation such that the concentration of the pollution is seen as a passive scalar (Equation \ref{ad-diff}).
+
+\begin{equation}
+    \frac{\partial c}{\partial t}+\nabla \cdot(\mathbf{u} c)=\nabla \cdot(\bar{\kappa} \nabla c)+F
+    \label{ad-diff}
+\end{equation}
+
+where $\bar{\kappa}$ represents the diffusivity tensor ($m^2/s$) and F the source terms ($kg/m^3/s$) (i.e. the pollution generated by a source point). A more detailed description of the Fluidity software implementation can be found in \cite{nonhydrostaticFluidity} and \cite{fluiditymanual}. The pollution background is represented by a sinusoidal function given by:
+
+\begin{equation}
+    C(t)=\frac{1}{2}\left(\sin \left(\frac{2 \pi t}{T}\right)+1\right)
+    \label{pollutionbackground}
+\end{equation}
+
+where $C$, $t$ and $T$ represent the pollution concentration, the time and the period in seconds, respectively. The background pollution equates to the waves of pollution in an urban environment while the tracers are point sources located at traffic intersections and illustrate pollution in a traffic congested junction \cite{PCAAE}.
+
+%%%%%%%%%%%%%%%%%%%%%%%% PROGRESS SECTION %%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Project Progress}
+\label{section:progress}
+
+The work done to date involved defining the boundaries of the project and the methods that will be investigated. This required an understanding of the past literature, the mathematical frameworks used and some of the softwares for this project. Following the identification of the relevant techniques that will be used in this project, this report was elaborated in order to give the understanding required to follow the future work that will achieved in the coming months.
+
+A first investigation of the dataset was made in order to characterize the pollution measurements that will be used to test this project's methodology.
+
+An initial consideration of the ethics checklist was done to ensure my understanding of what to consider when working with the data and softwares throughout the duration of the project. This is shown in Figure \ref{fig:ethics}. The checklist will be regularly examined to ensure that it provides an accurate representation of the considerations made in a well documented manner.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/ethics.png}
+    \caption{Initial Ethics Checklist for the Project}
+    \label{fig:ethics}
+\end{figure}
+
+\subsection{Future Work and Timeline}
+
+As well as continuing to deepen my understanding, in the next month I will be implementing the technologies discussed above for the test case. Following the initial implementation, I will be testing different scenarios to evaluate the methodology devised in this project. In August I will start writing the final project report to ensure enough time is available to produce a complete and clear document. Provided the proposed methodology yields positive results, incorporating it in a Data Assimilation process or in an Adaptive Domain Decomposition scheme could be considered.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+This project will address the opportunity to use deep learning techniques on unstructured meshes in the Data Assimilation process in order to complement the CVT method and reduce the space further. This could make the overall scheme more efficient without the need to truncate information as is presently the case with the use of PCA or TSVD techniques. The test case represents pollution measurements in Big Cities which can be viewed as a Big Data problem. We make use of Domain Decomposition techniques to work on sub-domains independently which could then be coupled to yield the overall picture of the entire domain.
+
+\newpage
+\printbibliography
+
+\end{document}

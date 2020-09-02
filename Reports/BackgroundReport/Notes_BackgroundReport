@@ -1,0 +1,43 @@
+
+Both sampling procedures were conducted using two transform matrices, 
+$Q_{d} \in\{0,1\}^{n \times m}$ and $Q_{u} \in \mathbb{R}^{m \times n}$ where $m > n$. From \ref{fig:UpDownSampling} (a), the original mesh, the matrix $Q_d$ only keeps a finite number of vertices (blue). $Q_d$ assigns a weight with each vertices (i.e 1 = keep, 0 = disregard) based on the method devised in \cite{garland1997surface}.
+
+The up-sampling operator $Q_u$ is constructed during down-sampling to preserve information. From \ref{fig:UpDownSampling} (b) to (c) only the blue vertices that represent the lower dimensional mesh undergo convolution defined by the following in frequency space \cite{defferrard:CCNgraphs}:
+
+$Q_u$ then maps the forgotten vertices (red) back into the convolved mesh \ref{fig:UpDownSampling} (d) using barycentric coordinates. This means they are associated with the closest triangle in the down-sampled mesh and given barycentric coordinates defined by:
+
+\begin{equation}
+    \widetilde{v}_{p}=w_{i} v_{i}+w_{j} v_{j}+w_{k} v_{k}
+\end{equation}
+
+where  $v_{i}, v_{j}, v_{k} \in \mathcal{V}_{d}$ (the down-sampled 3D 
+Euclidian space, $\mathcal{V}$) and $w_{i}+w_{j}+w_{k}=1$. The reconstructed mesh, $\mathcal{V}_u$ is obtained using sparse matrix multiplication: $\mathcal{V}_u = Q_u\mathcal{V}_d$.
+
+%The background and progress report should describe the research you have completed in preparation for the work of the project
+%\textbf{Background Section}
+%You should summarise the essential material related to the subject of the project, %for example a review of relevant academic literature.
+%\textbf{Progress Section}
+%You should also include a separate section on progress that describes: the activities and accomplishments of the project to date; any problems or obstacles that might have cropped up and how those problems or obstacles are being dealt with; and plans for the next phases of the project.
+%Submission is via CATE in the usual manner (the exercise can be found in the Summer Term period for your respective course).
+%This report will be reviewed by your second marker. You should arrange a meeting with your second marker after you submit the report to receive verbal feedback.
+
+% Recap research question and boundaries and selection criteria when searching for %papers
+
+
+%ID, analyse and evaluate (different views), emerging concepts, gaps and inconsistencies
+
+%State your view on previous literature, how do they relate to your work, highlight any further areas of study
+
+
+
+AEs can be used... however, 
+
+Have to interpolate so introduce error. Novelty is using them directly on unstructured mesh + for big data problem. 
+-AEs
+-AEs on unstructured  
+-AEs on unstructured mesh for Big data pb
+
+AEs computationaly expensive, efficient way to face Big data problem (DD).
+
+This project proposes to use Autoencoders instead of the aforementioned techniques on unstructured meshes to make the DA process doable while preserving all of the information. This novel approach could then be implemented as part of the DA process.
+
