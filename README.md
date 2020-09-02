@@ -20,7 +20,7 @@ pip install -r requirements.txt
 -*Localised1DCAE.py*: to reduce the space using CAEs on the result of the Localisation by Clustering in DA process\
 -*LocalisedTSVD.py*: to reduce the space using TSVD on the result of the Localisation by Clustering in DA process\
 
--**UnstructuredMesh**
+-**UnstructuredMesh**\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Unstructured CLIC Settings\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Localisation Loader Settings\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Data loader for CAEs\
@@ -29,24 +29,24 @@ pip install -r requirements.txt
  
  -**Experiments**: results saved in either of the following directories:\
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-TSVD / **Experiment Title** / Domain1 / Training/ Testing Loss and Time (csv)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DA results (csv)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vtu / contains sample of grids where assimilation took place\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Domain 2 /\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DA results (csv)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vtu / contains sample of grids where assimilation took place\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Domain 2 /\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...\
 							   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-CAE / **Experiment Title** / Domain1 /\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Domain 2 /\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Domain 2 /\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...\
 							  
--**X_6** contains pickled data for sub-domain 6\
+-**X_6** contains pickled data for sub-domain 6
 
--**LocalisationResults** contains visualisation of localisation clustering procedure\
+-**LocalisationResults** contains visualisation of localisation clustering procedure
 
--**data**, **train**, **nn**, **AEs**, **settings**, **VarDA**, **utils**, **ML_utils** are taken from https://github.com/julianmack/Data_Assimilation with modifications to fit our extension.\
+-**data**, **train**, **nn**, **AEs**, **settings**, **VarDA**, **utils**, **ML_utils** are taken from https://github.com/julianmack/Data_Assimilation with modifications to fit our extension.
 
 # Running
 
-Examples of runs can be found in files loc1DCAE.txt and tsvd.txt.\
+Examples of runs can be found in files loc1DCAE.txt and tsvd.txt.
 
 python3 Localised1DCAE.py\
 --title Experiment_Title\
@@ -55,7 +55,7 @@ python3 Localised1DCAE.py\
 --percentage Percentage_Of_Locations_Required\
 --model_name 1D2L\
 --retrain Boolean_Retrain_AE\
---mean_hist_data Boolean_DA_Background_State_Is_Mean_Of_Historical_Data\
+--mean_hist_data Boolean_DA_Background_State_Is_Mean_Of_Historical_Data
 
 Additional Requirement: VTU data files are set to match following format: LSBU_TIMESTEP_SUBDOMAIN.vtu\
-Overloading function get_sorted_fps_U in DataLoaderUnstructuredMesh could be required.\
+Overloading function get_sorted_fps_U in DataLoaderUnstructuredMesh could be required.
