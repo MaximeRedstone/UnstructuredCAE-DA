@@ -17,45 +17,45 @@ pip install -r requirements.txt
 
 # Repository Structure:
 
--*Localised1DCAE.py*: to reduce the space using CAEs on the result of the Localisation by Clustering in DA process <br \>
--*LocalisedTSVD.py*: to reduce the space using TSVD on the result of the Localisation by Clustering in DA process <br \>
+-*Localised1DCAE.py*: to reduce the space using CAEs on the result of the Localisation by Clustering in DA process\
+-*LocalisedTSVD.py*: to reduce the space using TSVD on the result of the Localisation by Clustering in DA process\
 
 -**UnstructuredMesh**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Unstructured CLIC Settings <br \>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Localisation Loader Settings <br \>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Data loader for CAEs <br \>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Localiser to conduct localisation by clustering <br \>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Adapted Tucodec Architectures, Residual Blocks <br \>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Unstructured CLIC Settings\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Localisation Loader Settings\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Data loader for CAEs\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Localiser to conduct localisation by clustering\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Adapted Tucodec Architectures, Residual Blocks\
  
- -**Experiments**: results saved in either of the following directories: <br \>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-TSVD / **Experiment Title** / Domain1 / Training/ Testing Loss and Time (csv) <br \>
-										           DA results (csv) <br \>
-											   vtu / contains sample of grids where assimilation took place <br \>		
-							   Domain 2 / <br \>
-							   ... <br \>
+ -**Experiments**: results saved in either of the following directories:\
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-TSVD / **Experiment Title** / Domain1 / Training/ Testing Loss and Time (csv)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DA results (csv)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vtu / contains sample of grids where assimilation took place\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Domain 2 /\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...\
 							   
-	-CAE / **Experiment Title** / Domain1 / <br \>
-							 Domain 2 / <br \>
-							  ... <br \>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-CAE / **Experiment Title** / Domain1 /\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Domain 2 /\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...\
 							  
--**X_6** contains pickled data for sub-domain 6 <br \>
+-**X_6** contains pickled data for sub-domain 6\
 
--**LocalisationResults** contains visualisation of localisation clustering procedure <br \>
+-**LocalisationResults** contains visualisation of localisation clustering procedure\
 
--**data**, **train**, **nn**, **AEs**, **settings**, **VarDA**, **utils**, **ML_utils** are taken from https://github.com/julianmack/Data_Assimilation with modifications to fit our extension. <br \>
+-**data**, **train**, **nn**, **AEs**, **settings**, **VarDA**, **utils**, **ML_utils** are taken from https://github.com/julianmack/Data_Assimilation with modifications to fit our extension.\
 
 # Running
 
-Examples of runs can be found in files loc1DCAE.txt and tsvd.txt. <br \>
+Examples of runs can be found in files loc1DCAE.txt and tsvd.txt.\
 
-python3 Localised1DCAE.py <br \>
---title Experiment_Title <br \>
---all_data_dir /path/to/data/dir/of/first/subdomain/   /path/to/data/dir/of/next/subdomain/  /path/to/data/dir/of/last/subdomain <br \>
---pickled_dir /path/to/where/pickled/clustered/data/is/saved/ <br \>
---percentage Percentage_Of_Locations_Required <br \>
---model_name 1D2L <br \>
---retrain Boolean_Retrain_AE <br \>
---mean_hist_data Boolean_DA_Background_State_Is_Mean_Of_Historical_Data <br \>
+python3 Localised1DCAE.py\
+--title Experiment_Title\
+--all_data_dir /path/to/data/dir/of/first/subdomain/   /path/to/data/dir/of/next/subdomain/  /path/to/data/dir/of/last/subdomain\
+--pickled_dir /path/to/where/pickled/clustered/data/is/saved/\
+--percentage Percentage_Of_Locations_Required\
+--model_name 1D2L\
+--retrain Boolean_Retrain_AE\
+--mean_hist_data Boolean_DA_Background_State_Is_Mean_Of_Historical_Data\
 
-Additional Requirement: VTU data files are set to match following format: LSBU_TIMESTEP_SUBDOMAIN.vtu <br \>
-Overloading function get_sorted_fps_U in DataLoaderUnstructuredMesh could be required. <br \>
+Additional Requirement: VTU data files are set to match following format: LSBU_TIMESTEP_SUBDOMAIN.vtu\
+Overloading function get_sorted_fps_U in DataLoaderUnstructuredMesh could be required.\
