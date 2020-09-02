@@ -8,40 +8,41 @@ It extends the implementation of CAEs for structured meshes found at: https://gi
 
 # Getting Started
 
-Installing Procedure: 
-
+**Installing Procedure**
+```
 git clone https://github.com/MaximeRedstone/UnstructuredCAE-DA.git
 cd UnstructuredCAE-DA
 pip install -r requirements.txt
+```
 
 # Repository Structure:
 
--Localised1DCAE.py: to reduce the space using CAEs on the result of the Localisation by Clustering in DA process
--LocalisedTSVD.py: to reduce the space using TSVD on the result of the Localisation by Clustering in DA process
+-*Localised1DCAE.py*: to reduce the space using CAEs on the result of the Localisation by Clustering in DA process
+-*LocalisedTSVD.py*: to reduce the space using TSVD on the result of the Localisation by Clustering in DA process
 
--\textbf{UnstructuredMesh}
+-**UnstructuredMesh**
 	-Unstructured CLIC Settings
 	-Localisation Loader Settings
 	-Data loader for CAEs
 	-Localiser to conduct localisation by clustering
 	-Adapted Tucodec Architectures, Residual Blocks
  
- -\textbf{Experiments}: results saved in either of the following directories:
- 	-TSVD / \textit{Experiment Title} / Domain1 / Training/ Testing Loss and Time (csv)
+ -**Experiments**: results saved in either of the following directories:
+ 	-TSVD / **Experiment Title** / Domain1 / Training/ Testing Loss and Time (csv)
 										           DA results (csv)
 											   vtu / contains sample of grids where assimilation took place				
 							   Domain 2 /
 							   ...
 							   
-	-CAE / \textit{Experiment Title} / Domain1 / 
+	-CAE / **Experiment Title** / Domain1 / 
 							 Domain 2 /
 							  ...
 							  
--\textbf{X_*} contains pickled data for sub-domain *
+-**X_6** contains pickled data for sub-domain 6
 
--\textbf{LocalisationResults} contains visualisation of localisation clustering procedure
+-**LocalisationResults** contains visualisation of localisation clustering procedure
 
--\textbf{data}, \textbf{train}, \textbf{nn}, \textbf{AEs}, \textbf{settings}, \textbf{VarDA}, \textbf{utils}, \textbf{ML_utils} are taken from https://github.com/julianmack/Data_Assimilation with modifications to fit our extension.
+-**data**, **train**, **nn**, **AEs**, **settings**, **VarDA**, **utils**, **ML_utils** are taken from https://github.com/julianmack/Data_Assimilation with modifications to fit our extension.
 
 # Running
 
