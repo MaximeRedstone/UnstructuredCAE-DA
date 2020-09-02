@@ -15,7 +15,7 @@ cd UnstructuredCAE-DA
 pip install -r requirements.txt
 ```
 
-# Repository Structure
+**Repository Structure**
 
 -*Localised1DCAE.py*: to reduce the space using CAEs on the result of the Localisation by Clustering in DA process\
 -*LocalisedTSVD.py*: to reduce the space using TSVD on the result of the Localisation by Clustering in DA process
